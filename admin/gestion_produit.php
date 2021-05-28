@@ -9,18 +9,22 @@ require_once 'inc/haut.php';
 <div class="container m-auto">
 
     <!-- button to ad admin  -->
-    <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-primary my-2">Ajouter une categorie</a>
+    <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-primary my-2"><i class="fas fa-folder-plus"></i> une categorie</a>
 
     <table class="table table-striped mx-auto">
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Categorie</th>
+                <th>Produit</th>
                 <th>Image</th>
-                <th>Produit vedette</th>
+                <th>produit_ingredients</th>
+                <th>produit_prix</th>
                 <th>Disponible</th>
+                <th>Produit vedette</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
+           
 
 
             </tr>
@@ -83,8 +87,8 @@ require_once 'inc/haut.php';
                 echo " <td>" . $row['produit_prix'] . "</td>";
                 echo "<td>" . $row['produit_vedette'] . "</td>";
                 echo "<td>" . $row['produit_disponible'] . "</td>";
-                echo "<td> <a href=\"modifier_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-warning \">Modifier le produit</a></td>";
-                echo "<td> <a href=\"supprimer_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-info \">Supprimer le produit</a></td>";
+                echo "<td> <a href=\"modifier_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-warning \"><i class=\"fas fa-user-edit\"></i> le produit</a></td>";
+                echo "<td> <a href=\"supprimer_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-danger \"><i class=\"fas fa-trash-alt\"></i> le produit</a></td>";
                 echo    "<tr>";
             }
             ?>

@@ -20,18 +20,14 @@ $nbr_food =      $sql->rowCount();
 <!-- ==================================================== -->
 <h1 class="titreChoix text-white text-center mt-5">Nos Pizzas</h1>
 <div class="container bg-dark py-2 pt-5 pb-4 my-3 img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">
-    <div class="row text-center">
 
-        <div class="col-12 col-md-6 col-lg-4 mb-3">
-            <img src="img/pizza6-300.jpg" alt="pizza" class="img-curvy img-thumbnail" style="background-color:#28a745; border-color:#28a745;">
-            <!-- accordeon -->
-            <div class="accordion accordion-flush my-2 mx-auto" id="accordionP6" style="width:50%">
-                <div class="accordion-item bg-success">
-                    <h2 class="accordion-header" id="flush-head-accordionP6">
-                    <?php
+
+    <div class="row text-center">
+        <!-- début card -->
+        <?php
                         if ($nbr_food > 0) {
                             // there are record in the database
-                            echo ' <div class="row">';
+                            echo '<div class="col-12 col-md-6 col-lg-4 mb-3">';
                             foreach ($result as $row) {
                                 $id_categorie = $row['id_categorie'];
                                 $nom_categorie = $row['nom_categorie'];
@@ -49,13 +45,14 @@ $nbr_food =      $sql->rowCount();
                             echo '</div>';
                         }
                         ?>
+       
+            <img src="img/pizza6-300.jpg" alt="pizza" class="img-curvy img-thumbnail" style="background-color:#28a745; border-color:#28a745;">
+            <!-- accordeon -->
+            <div class="accordion accordion-flush my-2 mx-auto" id="accordionP6" style="width:50%">
+                <div class="accordion-item bg-success">
+                    <h2 class="accordion-header" id="flush-head-accordionP6">
                         <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP6" aria-expanded="false" aria-controls="flush-accordionP6" style="background-color: #0a5846ab; color: #fff">
-                         
-
-                            <?php
-                                    //echo $produit_prix ;
-                            ?>
-
+                
                         </button>
                     </h2>
                     <div id="flush-accordionP6" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP6" data-bs-parent="#accordionP6">
