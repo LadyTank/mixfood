@@ -1,4 +1,4 @@
-<h1 class="titreChoix text-white text-center d-none d-md-block d-lg-block">Pizza ? Sushi ?</h1>
+<!-- <h1 class="titreChoix text-white text-center d-none d-md-block d-lg-block">Pizza ? Sushi ?</h1> -->
 
 <!-- Caroussel de l'accueil -->
 <div class="container mb-5 carousselAccueil d-none d-md-block d-lg-block">
@@ -9,10 +9,10 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="img/pizza1.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="pizza" width="50%" height="70%" style="background-color:#28a745; border-color:#28a745;">
+                <img src="img/pizza1_texte.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="pizza" width="50%" height="70%" style="background-color:#28a745; border-color:#28a745;">
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="img/sushi1.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="sushi" width="50%" height="70%" style="background-color:#28a745; border-color:#28a745;">
+                <img src="img/sushi1_texte.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="sushi" width="50%" height="70%" style="background-color:#28a745; border-color:#28a745;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
