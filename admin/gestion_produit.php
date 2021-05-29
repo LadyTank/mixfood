@@ -9,7 +9,7 @@ require_once 'inc/haut.php';
 <div class="container m-auto">
 
     <!-- button to ad admin  -->
-    <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-primary my-2"><i class="fas fa-folder-plus"></i> une categorie</a>
+    <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-primary my-2"><i class="fas fa-folder-plus"></i> un produit</a>
 
     <table class="table table-striped mx-auto">
         <thead class="table-dark">
