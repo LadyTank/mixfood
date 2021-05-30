@@ -225,4 +225,13 @@ footer .icon-fb {
   width: 100%;
   position: absolute;
 }
+
+.circle {
+  width: 500px;
+  height: 300px;
+}
+
+.alignLeft {
+  float: left;
+}
 /*# sourceMappingURL=style.css.map */

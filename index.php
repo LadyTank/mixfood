@@ -74,23 +74,22 @@ include 'inc/diaporama.php';
     }
     ?>
 
-    <div class="container mx-auto mx-5 row">
 
-        <div class="col-lg-6 m-auto">
-            <h1 class="titreChoix p-5">À propos de nous ...</h1>
-            <p class="typoChoix text-justify">Tous nos produits sont frais. Régionaux quand c'est possible.
-                Après un voyage au Japon de 3 ans, Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde nemo, consequatur nesciunt deserunt iste reiciendis corporis aliquam minima ad accusantium maiores aliquid ex quisquam laudantium quaerat maxime omnis necessitatibus!
-            </p>
-        </div>
-
-        <div class="col-lg-6">
-            <img src="img/chef.jpg" alt="chef Jean" class="img-fluid img-responsive d-none d-md-block d-lg-block">
-        </div>
-
-
-    </div>
 
 </div><!-- /fin container principal -->
+
+<div class="container mx-auto circleC">
+
+    <div class=""><img src="img/chefC.jpg" alt="" class="alignLeft img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
+
+    <h1 class="titreChoix p-4 text-left">À propos de nous ...</h1>
+    <p class="typoChoix text-justify p-4 m-4">Tous nos produits sont frais. Régionaux quand c'est possible.
+        Après un voyage au Japon de 3 ans, Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde nemo, consequatur nesciunt deserunt iste reiciendis corporis aliquam minima ad accusantium maiores aliquid ex quisquam laudantium quaerat maxime omnis necessitatibus!
+        Lorem ipsum dolor sit amet.
+    </p>
+
+
+</div>
 
 <?php
 include 'inc/bas.php';
