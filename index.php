@@ -29,7 +29,7 @@ include 'inc/diaporama.php';
 
 <!-- /container principal -->
 <div class="container m-auto">
-    <h2 class="text-center mt-4 text-light titreChoix"> Pourquoi choisir ? ...</h2>
+    <h2 class="text-center my-5 text-light titreChoix"> Pourquoi choisir ? ...</h2>
     <?php
     if ($nbr_categorie > 0) {
         // there are record in the database

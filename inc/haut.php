@@ -33,7 +33,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
                 <div class="container-fluid">
-                    <a class="navbar-brand typoChoix" href="#">MIXFOOD</a>
+                    <a class="navbar-brand typoChoix titreLogo" href="#">MIXFOOD</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -60,7 +60,7 @@
                     <?php
 
                     if (estConnecte()) { // si membre utilisateur connecté
-                        if (estAdmin()) {
+                        if (estAdmin()) { // si le membre connecté est administrateur
                             echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
                         } else {
                             echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';

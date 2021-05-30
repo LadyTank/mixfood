@@ -25,6 +25,10 @@ p, h1 {
   font-size: 2em;
 }
 
+.titreLogo {
+  font-size: 300%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: grey;
@@ -37,6 +41,11 @@ body {
 nav.centrer {
   display: block;
   margin: 0 auto;
+}
+
+nav li {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 nav li .centra {
@@ -84,6 +93,13 @@ a.liVert:active {
 
 .accordion-button::after {
   color: red;
+}
+
+.img-carrousel {
+  display: block;
+  max-height: 400px;
+  width: auto;
+  height: auto;
 }
 
 footer a {
