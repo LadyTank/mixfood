@@ -4,9 +4,6 @@
 
 	<?php
 
-
-
-    require_once '../inc/navbar.php';
     require_once '../inc/init.php';
     require_once '../inc/functions.php';
 
@@ -120,7 +117,10 @@
 
 
     ?>
-	<?php echo "$message";
+
+	<?php
+    include 'inc/haut.php';
+    echo "$message";
 
 
 

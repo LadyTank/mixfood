@@ -214,8 +214,8 @@ include 'inc/haut.php';
                     Utilisateur
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="manage_utilisateur_client.php">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Modifier</a></li>
                     <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
@@ -224,9 +224,9 @@ include 'inc/haut.php';
                     Catégories
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="ajouter_categorie.php">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="modifier_categorie.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="supprimer_categorie.php">Supprimer</a></li>
                 </ul>
             </div>
             <h2 class="text-center text-white mb-4 espace"> Actions </h2>
@@ -236,9 +236,9 @@ include 'inc/haut.php';
                     Produit
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="ajouter_produit.php">Ajouter</a></li>
                     <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="supprimer_produit.php">Supprimer</a></li>
                 </ul>
             </div>
             <div class="col-md-6 mb-23">
