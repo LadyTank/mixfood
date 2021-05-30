@@ -68,7 +68,8 @@
                         }
                         echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
                     } else { //sinon
-                        echo '<button class=" btn btn-light nav-item m-2"><a class="nav-link text-dark espace" href="inscription_client2.php">Inscription</a></button>';
+                        echo '<button class=" btn btn-light nav-item m-2 btn-I"><a class="nav-link text-dark espace" href="admin/inscription_client2.php">Inscription</a></button>';
+
                         echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="connexion_client2.php">Connexion</a></button>';
                     }
                     ?>

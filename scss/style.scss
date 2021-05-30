@@ -89,6 +89,14 @@ nav li:hover {
     background-color: $success;
 }
 
+
+.btn-I:hover {
+    font-weight: bold;
+    background-color: $vertC;
+    color: $blanc;
+    border-color: $success;
+}
+
 // les liens
 .lienVert {
     color: $success;

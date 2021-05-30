@@ -7,7 +7,7 @@ include 'inc/haut.php';
     <h3 class="text-center titreChoix text-light">Contact</h3>
     <p class="text-center mb-5 "><em>Parce que votre avis nous intéresse</em></p>
     <div class="row">
-        <div class="col-md-6 col-sm-12 col-lg-6">
+        <div class="col-md-3 col-sm-12 col-lg-3">
             <p>Laissez nous un commentaire</p>
             <p><span class="glyphicon glyphicon-map-marker"></span>Suresnes</p>
             <p><span class="glyphicon glyphicon-phone"></span>Téléphone : 01.42.52.24.25</p>
@@ -27,6 +27,9 @@ include 'inc/haut.php';
             <div class="col">
                 <button class="btn btn-success border border-light mr-1 mb-1 mx-auto col-sm-3 float-end" id="btn-envoyer">Envoyer</button>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-group ">
+            <img src="img/sushiDessin4.png" alt="dessin sushi contact" class="img-fluid">
         </div>
     </div> <!-- fin de row-->
     <div class="col mx-auto text-center mt-4 map-responsive">

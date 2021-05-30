@@ -64,6 +64,13 @@ nav li:hover {
   background-color: #157347;
 }
 
+.btn-I:hover {
+  font-weight: bold;
+  background-color: #24aa6b;
+  color: #ece6e6;
+  border-color: #157347;
+}
+
 .lienVert {
   color: #157347;
   text-decoration: none;

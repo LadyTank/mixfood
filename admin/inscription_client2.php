@@ -84,11 +84,11 @@ include 'inc/haut.php';
 <main class="container mx-auto ">
     <div class="row">
         <div class="col-sm-12 mx-auto ">
-            <h1 class="text-center titreChoix text-white">MIXFOOD Inscrivez-vous !!!</h1>
+            <h1 class="text-center titreChoix text-white">Inscrivez-vous !!!</h1>
         </div><!-- Fin de col -->
     </div><!-- Fin row -->
 
-    <div class="row">
+    <div class="row mb-5">
 
         <div class="col-lg-4">
             <img src="../img/sushiDessin6.png" alt="dessin sushi dans la sauce" class="img-fluid">
@@ -130,7 +130,7 @@ include 'inc/haut.php';
                 <div class="form-group p-2">
                     <!-- adresse -->
                     <label for="adresse" class="form-label">Adresse postale*</label>
-                    <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre adresse"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
+                    <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre adresse en cas de livraison"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
                 </div>
                 <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                     <!-- code_postal -->

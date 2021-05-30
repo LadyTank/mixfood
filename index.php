@@ -79,7 +79,9 @@ include 'inc/diaporama.php';
 
         <div class="col-lg-6 m-auto">
             <h1 class="titreChoix p-5">À propos de nous ...</h1>
-            <p class="typoChoix text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quod nemo officiis officia commodi natus, molestias animi culpa non ducimus, perspiciatis neque enim deserunt iste doloribus architecto accusantium? Molestiae, iste.</p>
+            <p class="typoChoix text-justify">Tous nos produits sont frais. Régionaux quand c'est possible.
+                Après un voyage au Japon de 3 ans, Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde nemo, consequatur nesciunt deserunt iste reiciendis corporis aliquam minima ad accusantium maiores aliquid ex quisquam laudantium quaerat maxime omnis necessitatibus!
+            </p>
         </div>
 
         <div class="col-lg-6">
