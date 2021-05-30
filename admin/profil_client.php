@@ -104,9 +104,9 @@ include 'inc/haut.php';
         <div class="row">
         <div class="row g-4 mb-4 m-auto">
             <div class="col-6 col-lg-3">
-                <div class="card h-100 rad">
+                <div class="card h-100 rad alert-success">
                     <div class="card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">Total Sales</h4>
+                        <h4 class="stats-type mb-1">Total des ventes</h4>
                         <div class="stats-figure">$12,628</div>
                         <div class="stats-meta text-success">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -119,9 +119,9 @@ include 'inc/haut.php';
             </div>
 
             <div class="col-6 col-lg-3">
-                <div class="card rad h-100">
+                <div class="card rad h-100 alert-success">
                     <div class="card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">Expenses</h4>
+                        <h4 class="stats-type mb-1">Clients inscrits</h4>
                         <div class="stats-figure">$2,250</div>
                         <div class="stats-meta text-success">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -133,9 +133,9 @@ include 'inc/haut.php';
                 </div>
             </div>
             <div class="col-6 col-lg-3">
-                <div class="card rad h-100">
+                <div class="card rad h-100 alert-success">
                     <div class="card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">Projects</h4>
+                        <h4 class="stats-type mb-1">Choix de la carte</h4>
                         <div class="stats-figure">23</div>
                         <div class="stats-meta">
                             Open</div>
@@ -144,9 +144,9 @@ include 'inc/haut.php';
                 </div>
             </div>
             <div class="col-6 col-lg-3">
-                <div class="card rad h-100">
+                <div class="card rad h-100 alert-success">
                     <div class="card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">Invoices</h4>
+                        <h4 class="stats-type mb-1">Commandes en cours</h4>
                         <div class="stats-figure">6</div>
                         <div class="stats-meta">New</div>
                     </div>
@@ -158,7 +158,7 @@ include 'inc/haut.php';
     }
     ?>
 
-    <h1 class="mt-4 text-center titreChoix text-white d-none d-lg-block d-md-block">Bienvenue sur votre profil
+    <h1 class="mt-4 text-center typoChoix text-white d-none d-lg-block d-md-block espace">Bienvenue sur votre profil
         <?php
         if (estAdmin()) {
             echo ' administrateur';
@@ -176,7 +176,7 @@ include 'inc/haut.php';
     <div class="col-12 row" id="blocResponsive">
         <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2" id="sectionR1">
 
-            <h2 class="text-white text-center">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h2>
+            <h2 class="text-white text-center espace">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h2>
 
             <hr>
 
@@ -213,9 +213,9 @@ include 'inc/haut.php';
         if (estAdmin()) {
             echo '
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-            <h2 class="text-center text-white"> Actions </h2>
+            <h2 class="text-center text-white mb-4 espace"> Actions </h2>
             <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Utilisateur
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -225,7 +225,7 @@ include 'inc/haut.php';
                 </ul>
             </div>
             <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     Catégories
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -235,7 +235,7 @@ include 'inc/haut.php';
                 </ul>
             </div>
             <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                     Produit
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
@@ -245,7 +245,7 @@ include 'inc/haut.php';
                 </ul>
             </div>
             <div class="col-md-6 mb-23">
-                <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Commande</a>
+                <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Commande</a>
             </div>
         </div>';
         };

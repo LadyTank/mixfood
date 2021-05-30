@@ -136,6 +136,22 @@ footer .icon-fb {
   display: none;
 }
 
+.btn-profil {
+  display: inline-block;
+  background-color: #24aa6b;
+  border-radius: 10px;
+  border: 4px double #157347;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
 .rad {
   border-radius: 15px;
 }

@@ -118,7 +118,7 @@ a.liVert:active {
     color: rgb(255, 0, 0);
 }
 
-
+//  carrousel
 .img-carrousel {
     display: block;
     max-height:400px;
@@ -141,12 +141,12 @@ footer .icon-fb {
 }
 
 // les images
-.produit-menu-img{
+.produit-menu-img {
     width: 20%;
     float: left;
-  }
+}
   
-.img-curvy{
+.img-curvy {
     border-radius: $img_border_radius;
 }
 
@@ -161,6 +161,25 @@ footer .icon-fb {
 // cacher apparaitre le formulaire de modification de profil
 .cache {
     display: none;
+}
+
+// profil admin
+.btn-profil {
+    display: inline-block;
+    background-color: $vertC;
+    border-radius: 10px;
+    border: 4px double $success;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
 
 // information stat en cours profil administrateur
@@ -197,7 +216,7 @@ footer .icon-fb {
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    }
+}
 
 .map-responsive iframe {
     left:0;
@@ -205,4 +224,6 @@ footer .icon-fb {
     height:100%;
     width:100%;
     position:absolute;
-    }
+}
+
+
