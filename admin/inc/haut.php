@@ -33,7 +33,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
                 <div class="container-fluid">
-                    <a class="navbar-brand typoChoix titreLogo" href="../index.php">MIXFOOD</a>
+                    <a class="navbar-brand typoChoix titreLogo d-none d-lg-block d-md-block" href="../index.php">MIXFOOD</a>
+                    <a class="navbar-brand typoChoix titreLogo d-sm-block d-md-none d-lg-none" href="../index.php"><img src="img/logoMobile.png" alt="logo Mixfood Mobile"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

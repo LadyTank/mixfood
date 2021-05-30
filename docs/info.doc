@@ -1,0 +1,19 @@
+en-tête de commande :
+    id_commande (clé unique)
+    id_utlisateur (clé étrangère)
+    total_commande
+    delivraison (livraison ou retrait sur place)
+    date_commande
+    statut_commande (livré ou non)
+
+le détail de la commande :
+    id_detail_commande (clé unique)
+    id_produit (clé étrangère) à récupérer en dynamique
+    id-commande (clé étrangère)
+    quantité
+
+
+
+commande 24 , 26 mai 2021, client 29 séverine:
+- produit 4 (pizza margarita) x 3
+- prdouit 16 (maki saumon) x 1s

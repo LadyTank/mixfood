@@ -173,13 +173,12 @@ include 'inc/haut.php';
     echo $contenu;
     ?>
 
-    <div class="col-12 row" id="blocResponsive">
+    <div class="col-12 row " id="blocResponsive">
         <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2" id="sectionR1">
 
             <h2 class="text-white text-center espace">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h2>
 
             <hr>
-
             <div class="card mx-auto alert alert-success">
                 <div class="card-body ">
                     <h5 class="card-title text-center">Informations</h5>
