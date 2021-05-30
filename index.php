@@ -28,9 +28,12 @@ include 'inc/diaporama.php';
 ?>
 
 <!-- /container principal -->
-<div class="container m-auto">
-    <h2 class="text-center my-5 text-light titreChoix"> Pourquoi choisir ? ...</h2>
+<div class="container mx-auto">
+    <h2 class="text-center mt-5 text-light titreChoix d-none d-md-block d-lg-block"> Pourquoi choisir ?</h2>
+    <h2 class="text-center mt-5 text-light titreChoix d-none d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
+
     <?php
+    // section destop
     if ($nbr_categorie > 0) {
         // there are record in the database
         echo ' <div class="row">';
@@ -39,13 +42,33 @@ include 'inc/diaporama.php';
             $nom_categorie = $row['nom_categorie'];
             $nom_image  = $row['nom_image'];
 
-            echo ' <div class="col-6 mt-3  text-center mb-5">';
+            echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-md-block d-lg-block">';
             if ($nom_image == '') {
                 // Display an error message 
                 echo 'image NOT found';
             } else {
                 // Display the image
                 echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+            }
+        }
+        echo '</div>';
+    }
+    // section mobile
+    if ($nbr_categorie > 0) {
+        // there are record in the database
+        echo ' <div class="row">';
+        foreach ($result as $row) {
+            $id_categorie = $row['id_categorie'];
+            $nom_categorie = $row['nom_categorie'];
+            $nom_image  = $row['nom_image'];
+
+            echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-sm-block d-lg-none d-md-none">';
+            if ($nom_image == '') {
+                // Display an error message 
+                echo 'image NOT found';
+            } else {
+                // Display the image
+                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="100%" height="100%" style="background-color:#28a745; border-color:#28a745;"></div>';
             }
         }
         echo '</div>';

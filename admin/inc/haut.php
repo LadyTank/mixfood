@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Les icônes-->
     <script src="https://kit.fontawesome.com/b41dcf0f5f.js" crossorigin="anonymous"></script>
@@ -28,65 +28,50 @@
 
 <body class="">
 
-    <!-- navbar -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
+    <header class="container-fluid bg-dark">
+        <!-- navbar -->
         <div class="container">
-            <picture>
-                <!-- affichage logo mode mobile -->
-                <source media="(max-width: 1024px)" srcset="../img/logoMobile.png 1x" class="logoMobile">
-                <!-- affichage logo mode destok -->
-                <source media="(min-width: 1024px)" srcset="../img/logoBlanc.png 2x" class="logoDestok">
-                <img src="img/logoBlanc.png" alt="logo-mixfood" class="mt-3 img-responsive mb-3">
-            </picture>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-end" id="navbar">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link m-4 espace" href="../index.php">MIXFOOD</a>
-                    </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle m-4 espace" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item espace liVert" href="../pizza.php">Pizza</a></li>
-                            <li><a class="dropdown-item espace liVert" href="../sushi.php">Sushi</a></li>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
+                <div class="container-fluid">
+                    <a class="navbar-brand typoChoix titreLogo d-none d-lg-block d-md-block" href="../index.php">MIXFOOD</a>
+                    <a class="navbar-brand typoChoix titreLogo d-sm-block d-md-none d-lg-none" href="../index.php"><img src="../img/logoMobile.png" alt="logo Mixfood Mobile"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="navbar-collapse collapse justify-content-center" id="navbarM">
+                        <ul class="navbar-nav align-items-center ">
+                            <li class="nav-item">
+                                <a class="nav-link espace" aria-current="page" href="index.php">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="sushi.php">SUSHI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="pizza.php">PIZZA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="contact.php">Contact</a>
+                            </li>
+
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link m-4 espace" href="../about.php">Qui sommes-nous ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link m-4 espace" href="../contact.php">Contact</a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-between navbar-collapse collapse ">
+                    <?php
 
-            </div>
-        </div>
-        <div class="container col-sm-11 col-lg-2 mx-auto justify-content-center navbar-collapse collapse ">
-            <?php
-
-            // visible pour les administrateurs
-            // if (estAdmin()) {
-            //     echo '<ul class="navbar-nav align-items-center  d-none d-lg-block d-md-block">';
-            //     echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="manage_utilisateur_client.php">ADMIN</a></li>';
-            //     echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="gestion_produit.php">Produit</a></li>';
-            //     echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';
-            // }
-
-            if (estConnecte()) { // si membre utilisateur connecté
-                if (estAdmin()) {
-                    echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
-                } else {
-                    echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
-                }
-                echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
-            } else { //sinon
-                echo '<button class=" btn btn-light nav-item m-2"><a class="nav-link text-dark espace" href="inscription_client2.php">Inscription</a></button>';
-                echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="connexion_client2.php">Connexion</a></button>';
-            }
-            ?>
-
-        </div>
-    </nav>
+                    if (estConnecte()) { // si membre utilisateur connecté
+                        if (estAdmin()) { // si le membre connecté est administrateur
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
+                        } else {
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
+                        }
+                        echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
+                    } else { //sinon
+                        echo '<button class=" btn btn-light nav-item m-2"><a class="nav-link text-dark espace" href="inscription_client2.php">Inscription</a></button>';
+                        echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="connexion_client2.php">Connexion</a></button>';
+                    }
+                    ?>
+                </div>
+            </nav>
+    </header>

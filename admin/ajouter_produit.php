@@ -8,7 +8,7 @@ require_once 'inc/functions.php';
 
 
 if (!empty($_POST)) {
-    //On verify que le formulaire a bien été envoyer
+    //On verifie que le formulaire a bien été envoyé
     // on nettoie le formulaire en utilisant htmlspecialchars
 
     $nom_produit =  htmlspecialchars($_POST['nom_produit']);
@@ -18,7 +18,7 @@ if (!empty($_POST)) {
     $produit_ingredients = htmlspecialchars($_POST['produit_ingredients']);
     $id_categorie = $_POST['categorie'];
 
-    // On verify le button radio selectionner
+    // On verifie le bouton radio selectionné
     if (isset($_POST['produit_vedette'])) {
         $produit_vedette =  htmlspecialchars($_POST['produit_vedette']);
     } else {
@@ -33,7 +33,7 @@ if (!empty($_POST)) {
     }
 
     // TRAITEMENT DES IMAGES
-    // On verifie si les images sont cselectionner
+    // On verifie si les images sont selectionnées
     //print_r($_FILES['produit_image']['name']);
     //die();
 
