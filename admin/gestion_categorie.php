@@ -37,7 +37,8 @@ require_once 'inc/haut.php';
     ?>
 
     <!-- button to ad admin  -->
-    <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class="btn btn-primary my-2">Ajouter une categorie</a>
+    <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class="btn btn-primary my-2"><i class="fas fa-folder-plus"></i> une categorie</a>
+   
    
     <table class="table table-striped mx-auto">
         <thead class="table-dark">
@@ -110,8 +111,9 @@ require_once 'inc/haut.php';
         <?php
                 echo "<td>" . $row['en_vedette'] . "</td>";
                 echo "<td>" . $row['disponible'] . "</td>";
-                echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-warning \">Modifier la gategorie</a></td>";
-                echo "<td> <a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-info \">Supprimer la gategorie</a></td>";
+                echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i> la gategorie</a></td>";
+            
+                echo "<td> <button <a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> la gategorie</a></button></td>";
                 echo    "<tr>";
             }
         ?>
@@ -120,7 +122,31 @@ require_once 'inc/haut.php';
         </tbody>
     </table>
 
-</div>
+
+        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <p>You are about to delete one track, this procedure is irreversible.</p>
+                        <p>Do you want to proceed?</p>
+                        <p class="debug-url"></p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger btn-ok">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 <?php require_once 'inc/bas.php' ?>

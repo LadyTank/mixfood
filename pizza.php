@@ -17,10 +17,6 @@ include_once 'inc/haut.php';
                         <button class="accordion-button collapsed btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP1" aria-expanded="false" aria-controls="flush-accordionP1" style="background-color: #0a5846ab; color: #fff">
                             Napolitaine 9.99€
 
-                            <?php
-
-                            ?>
-
                         </button>
                     </h2>
                     <div id="flush-accordionP1" class="accordion-collapse collapse bg-success activeVert" aria-labelledby="flush-head-accordionP" data-bs-parent="#accordionP1">
