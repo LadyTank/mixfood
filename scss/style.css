@@ -11,6 +11,10 @@ p, h1 {
   letter-spacing: 2px;
 }
 
+.btn-vertC {
+  color: #24aa6b;
+}
+
 .titreChoix {
   font-family: 'Give You Glory', cursive;
   font-size: 5em;
@@ -24,6 +28,10 @@ p, h1 {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: grey;
+}
+
+.navbar-custom {
+  height: 100px;
 }
 
 nav.centrer {
@@ -76,11 +84,6 @@ a.liVert:active {
 
 .accordion-button::after {
   color: red;
-}
-
-.carousselAccueil img {
-  width: 100%;
-  max-height: 700px;
 }
 
 footer a {

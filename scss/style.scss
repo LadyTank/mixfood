@@ -2,6 +2,7 @@
 $rouge: rgb(204, 22, 22);
 $blanc: rgb(236, 230, 230);
 $success: #157347;
+$vertC: #24aa6b;
 $noir: #000;
 $jaune: #ffbb00;
 $gris: grey;
@@ -29,6 +30,10 @@ p, h1 {
     letter-spacing: 2px;
 }
 
+.btn-vertC {
+    color: $vertC;
+}
+
 // typographie écriture manuscrite
 .titreChoix {
     font-family: 'Give You Glory', cursive;
@@ -46,6 +51,11 @@ body {
 }
 
 // navbar
+
+.navbar-custom {
+    height: 100px;
+  }
+
 nav.centrer {
     display: block;
     margin: 0 auto;
@@ -100,10 +110,10 @@ a.liVert:active {
 
 
 // caroussel
-.carousselAccueil img {
-    width: 100%;
-    max-height: 700px;
-}
+// .carousselAccueil img {
+//     width: 100%;
+//     max-height: 700px;
+// }
 
 // footer
 footer a {

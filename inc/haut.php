@@ -28,62 +28,49 @@
 
 <body class="">
 
-    <!-- navbar -->
+    <header class="container-fluid bg-dark">
+        <!-- navbar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
+                <div class="container-fluid">
+                    <a class="navbar-brand typoChoix" href="#">MIXFOOD</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
-        <div class="container col-md-6 col-lg-9">
-            <picture>
-                <!-- affichage logo mode mobile -->
-                <source media="(max-width: 1024px)" srcset="img/logoMobile.png 1x" class="logoMobile">
-                <!-- affichage logo mode destok -->
-                <source media="(min-width: 1024px)" srcset="img/logoBlanc.png 2x" class="logoDestok">
-                <img src="img/logoBlanc.png" alt="logo-mixfood" class="mt-3 img-responsive mb-3">
-            </picture>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-end" id="navbar">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link m-4 espace" href="index.php">MIXFOOD</a>
-                    </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle m-4 espace" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item espace liVert" href="pizza.php">Pizza</a></li>
-                            <li><a class="dropdown-item espace liVert" href="sushi.php">Sushi</a></li>
+                    <div class="navbar-collapse collapse justify-content-center" id="navbarM">
+                        <ul class="navbar-nav align-items-center ">
+                            <li class="nav-item">
+                                <a class="nav-link espace" aria-current="page" href="index.php">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="sushi.php">SUSHI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="pizza.php">PIZZA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link espace" href="contact.php">Contact</a>
+                            </li>
+
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link m-4 espace " href="about.php">Qui sommes-nous ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link m-4 espace" href="contact.php">Contact</a>
-                    </li>
+                    </div>
+                </div>
+                <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-between navbar-collapse collapse ">
+                    <?php
 
-                </ul>
-
-            </div>
-        </div>
-        <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-center navbar-collapse collapse ">
-            <?php
-
-            // visible pour les administrateurs
-            if (estAdmin()) {
-                echo '<ul class="navbar-nav align-items-center d-none d-lg-block">';
-                echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="admin/manage_utilisateur_client.php">ADMIN</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="admin/gestion_produit.php">Produit</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';
-            }
-
-            if (estConnecte()) { // si membre utilisateur connecté
-                echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">Profil</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="admin/profil_client.php?action=deconnexion">Déconnexion</a></button>';
-            } else { //sinon
-                echo '<button class=" btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/inscription_client2.php">Inscription</a></button>';
-                echo '<button class=" btn btn-success nav-item lienBlanc"><a class="nav-link lienBlanc espace" href="admin/connexion_client2.php">Connexion</a></button>';
-            }
-            ?>
-
-        </div>
-    </nav>
+                    if (estConnecte()) { // si membre utilisateur connecté
+                        if (estAdmin()) {
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
+                        } else {
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
+                        }
+                        echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="admin/profil_client.php?action=deconnexion">Déconnexion</a></button>';
+                    } else { //sinon
+                        echo '<button class=" btn btn-light nav-item m-2"><a class="nav-link text-dark espace" href="admin/inscription_client2.php">Inscription</a></button>';
+                        echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="admin/connexion_client2.php">Connexion</a></button>';
+                    }
+                    ?>
+                </div>
+            </nav>
+    </header>

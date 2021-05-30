@@ -9,7 +9,7 @@
             <div class="row">
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 d-none d-md-block d-lg-block ">
-                    <h6><img src="img/logoMobile.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="30%" height="30%"></h6>
+                    <h6><img src="img/logoMobile.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="50%" height="50%"></h6>
                 </div>
                 <!-- Grid column -->
 

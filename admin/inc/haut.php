@@ -68,18 +68,22 @@
             <?php
 
             // visible pour les administrateurs
-            if (estAdmin()) {
-                echo '<ul class="navbar-nav align-items-center  d-none d-lg-block d-md-block">';
-                echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="manage_utilisateur_client.php">ADMIN</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="gestion_produit.php">Produit</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';
-            }
+            // if (estAdmin()) {
+            //     echo '<ul class="navbar-nav align-items-center  d-none d-lg-block d-md-block">';
+            //     echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="manage_utilisateur_client.php">ADMIN</a></li>';
+            //     echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="gestion_produit.php">Produit</a></li>';
+            //     echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';
+            // }
 
             if (estConnecte()) { // si membre utilisateur connecté
-                echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">Profil</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
+                if (estAdmin()) {
+                    echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
+                } else {
+                    echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
+                }
+                echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
             } else { //sinon
-                echo '<button class=" btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="inscription_client2.php">Inscription</a></button>';
+                echo '<button class=" btn btn-light nav-item m-2"><a class="nav-link text-dark espace" href="inscription_client2.php">Inscription</a></button>';
                 echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="connexion_client2.php">Connexion</a></button>';
             }
             ?>
