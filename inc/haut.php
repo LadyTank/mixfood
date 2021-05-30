@@ -64,7 +64,7 @@
                         if (estAdmin()) { // si le membre connecté est administrateur
                             echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
                         } else {
-                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">PROFIL</a></button>';
                         }
                         echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="admin/profil_client.php?action=deconnexion">Déconnexion</a></button>';
                     } else { //sinon

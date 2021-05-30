@@ -89,7 +89,11 @@ include 'inc/haut.php';
     </div><!-- Fin row -->
 
     <div class="row">
-        <div class="col-sm-12 col-md-8 col-lg-8 mx-auto pb-4 ">
+
+        <div class="col-lg-4">
+            <img src="../img/sushiDessin6.png" alt="dessin sushi dans la sauce" class="img-fluid">
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-8 m-auto pb-4 ">
             <?php
             echo $contenu;
             ?>
@@ -97,30 +101,30 @@ include 'inc/haut.php';
             <form method="POST" action="" class=" row p-5 m-2 border border-dark alert alert-dark " id="formulaireInscription">
 
 
-                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group p-2 col-sm-12 col-md-4 col-lg-4">
                     <!-- nom -->
                     <label for="nom" class="form-label">Nom de famille*</label>
                     <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $_POST['nom'] ?? ''; ?>" required placeholder="Votre nom de famille">
                 </div>
-                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group p-2 col-sm-12 col-md-4 col-lg-4">
                     <!-- prenom -->
                     <label for="prenom" class="form-label">Prénom*</label>
                     <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $_POST['prenom'] ?? ''; ?>" required placeholder="Votre prénom">
                 </div>
-                <div class="form-group p-2">
+                <div class="form-group p-2 col-sm-12 col-md-4 col-lg-4">
                     <!-- mot_de_passe -->
                     <label for="mot_de_passe" class="form-label">Mot de passe*</label>
                     <input type="password" class="form-control text-right" name="mot_de_passe" id="mot_de_passe" required placeholder="Seul vous le connaissez">
-                    <small class='bg-dark text-white'>votre mot de passe doit contenir 4 à 20 caractères</small>
+                    <small class='text-muted'> 4 à 20 caractères</small>
                 </div>
-                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group p-2 col-sm-12 col-md-7 col-lg-7">
                     <!-- mail -->
                     <label for="email" class="form-label">Adresse éléctronique*</label>
                     <input type="email" class="form-control text-right" name="email" id="email" value="<?php echo $_POST['email'] ?? ''; ?>" required placeholder="Votre email">
                 </div>
-                <div class=" form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <div class=" form-group p-2 col-sm-12 col-md-5 col-lg-5">
                     <!-- telephone -->
-                    <label for="telephone" class="form-label">Téléphone</label>
+                    <label for="telephone" class="form-label">Téléphone*</label>
                     <input type="text" name="telephone" class="form-control" id="telephone" required placeholder="Votre numéro de téléphone">
                 </div>
                 <div class="form-group p-2">
@@ -149,6 +153,8 @@ include 'inc/haut.php';
                 </div>
             </form> <!-- fin de formulaire -->
         </div><!-- Fin de col -->
+
+
     </div><!-- Fin de row -->
 
 

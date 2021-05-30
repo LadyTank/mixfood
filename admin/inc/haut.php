@@ -42,16 +42,16 @@
                     <div class="navbar-collapse collapse justify-content-center" id="navbarM">
                         <ul class="navbar-nav align-items-center ">
                             <li class="nav-item">
-                                <a class="nav-link espace" aria-current="page" href="index.php">Accueil</a>
+                                <a class="nav-link espace" aria-current="page" href="../index.php">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link espace" href="sushi.php">SUSHI</a>
+                                <a class="nav-link espace" href="../sushi.php">SUSHI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link espace" href="pizza.php">PIZZA</a>
+                                <a class="nav-link espace" href="../pizza.php">PIZZA</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link espace" href="contact.php">Contact</a>
+                                <a class="nav-link espace" href="../contact.php">Contact</a>
                             </li>
 
                         </ul>
@@ -64,7 +64,7 @@
                         if (estAdmin()) { // si le membre connecté est administrateur
                             echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
                         } else {
-                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">ADMIN</a></button>';
+                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">PROFIL</a></button>';
                         }
                         echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
                     } else { //sinon

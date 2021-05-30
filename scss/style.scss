@@ -95,8 +95,16 @@ nav li:hover {
     text-decoration: none;
 }
 
+.lienVert:hover {
+    color: $success;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
 .lienBlanc {
     color: $blanc;
+    text-decoration: none;
 }
 
 .lienBlanc:hover {
@@ -131,7 +139,12 @@ a.liVert:active {
 // footer
 
 footer {
-    min-height:225px;
+    min-height:230px;
+}
+
+.footerC {
+    min-height: 300px;
+    position: sticky;
 }
 
 footer a {

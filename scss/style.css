@@ -69,8 +69,15 @@ nav li:hover {
   text-decoration: none;
 }
 
+.lienVert:hover {
+  color: #157347;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .lienBlanc {
   color: #ece6e6;
+  text-decoration: none;
 }
 
 .lienBlanc:hover {
@@ -103,7 +110,13 @@ a.liVert:active {
 }
 
 footer {
-  min-height: 225px;
+  min-height: 230px;
+}
+
+.footerC {
+  min-height: 300px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 footer a {

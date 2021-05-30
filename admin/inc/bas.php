@@ -48,7 +48,7 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
-                            <p class="">Newsletter </p>
+                            <p class="vert">Newsletter </p>
                             <form id="subscribe" novalidate="true">
                                 <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Votre email" spellcheck="false" type="text">
                                 <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button>
@@ -60,7 +60,7 @@
 
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase text-center mb-4 font-weight-bold">Suivez-nous</h6>
+                    <h6 class="text-uppercase text-center mb-4 font-weight-bold vert">Suivez-nous</h6>
 
                     <!-- Facebook -->
                     <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
