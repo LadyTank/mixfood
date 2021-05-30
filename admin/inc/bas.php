@@ -17,7 +17,7 @@
                 <hr class="w-100 clearfix d-md-none" />
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-5">
                     <h6 class="text-uppercase mb-4 font-weight-bold vert">Moyen de paiement</h6>
                     <p>
                         <a class="text-white ">Espèces</a>
@@ -34,7 +34,7 @@
                 <hr class="w-100 clearfix d-md-none" />
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-5">
                     <h6 class="text-uppercase mb-4 font-weight-bold vert">CONTACT</h6>
                     <p>
                         <a class="text-white" href="connexion_client2.php">Connexion</a>
@@ -45,7 +45,7 @@
                 </div>
                 <!-- Grid column -->
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-5">
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
                             <p class="vert">Newsletter </p>
@@ -59,11 +59,11 @@
                 </div>
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-5">
                     <h6 class="text-uppercase text-center mb-4 font-weight-bold vert">Suivez-nous</h6>
 
                     <!-- Facebook -->
-                    <p class="text-center text-md-left mt-5"><a href="https://fr-fr.facebook.com/" target="_blank"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
+                    <p class="text-center text-md-left mt-3"><a href="https://fr-fr.facebook.com/" target="_blank"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
 
                 </div>
             </div>
@@ -75,7 +75,7 @@
 
     <!-- Copyright -->
     <div class="text-center">
-        <p class="fw-light "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+        <p class="text-end text-muted "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>

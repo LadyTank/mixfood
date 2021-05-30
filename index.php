@@ -76,14 +76,16 @@ include 'inc/diaporama.php';
 
 
 
-</div><!-- /fin container principal -->
+</div><!-- /fin container-->
+
+<!-- INTRODUIRE LES PROMOTIONS ICI ???-->
 
 <div class="container mx-auto circleC">
 
-    <div class=""><img src="img/chefC.jpg" alt="" class="alignLeft img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
+    <div class=""><img src="img/chefC.jpg" alt="" class="alignRight img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
 
-    <h1 class="titreChoix p-4 text-left">À propos de nous ...</h1>
-    <p class="typoChoix text-justify p-4 m-4">Tous nos produits sont frais. Régionaux quand c'est possible.
+    <h1 class="titreChoix p-4 text-left espace">À propos de nous ...</h1>
+    <p class="typoChoix text-justify p-4 m-4 espace">Tous nos produits sont frais. Régionaux quand c'est possible.
         Après un voyage au Japon de 3 ans, Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde nemo, consequatur nesciunt deserunt iste reiciendis corporis aliquam minima ad accusantium maiores aliquid ex quisquam laudantium quaerat maxime omnis necessitatibus!
         Lorem ipsum dolor sit amet.
     </p>
