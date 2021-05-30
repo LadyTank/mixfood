@@ -9,8 +9,8 @@
             <!--Grid row-->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 d-none d-md-block d-lg-block ">
-                    <h6><img src="../img/logoMobile.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="35%" height="35%"></h6>
+                <div class="col-md-3 col-lg-3 col-xl-3 d-none d-md-block d-lg-block ">
+                    <h6><img src="../img/logoBlanc.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center " width="35%" height="35%"></h6>
                 </div>
                 <!-- Grid column -->
 
@@ -18,12 +18,9 @@
 
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Moyen de paiement</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold vert">Moyen de paiement</h6>
                     <p>
-                        <a class="text-white">Paypal</a>
-                    </p>
-                    <p>
-                        <a class="text-white">Espèces</a>
+                        <a class="text-white ">Espèces</a>
                     </p>
                     <p>
                         <a class="text-white">Carte bancaire</a>
@@ -38,13 +35,17 @@
 
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">CONTACT</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold vert">CONTACT</h6>
                     <p>
-                        <a class="text-white">Connexion</a>
+                        <a class="text-white" href="connexion_client2.php">Connexion</a>
                     </p>
                     <p>
-                        <a class="text-white">Menu</a>
+                        <a class="text-white" href="../index.php">Menu</a>
                     </p>
+                </div>
+                <!-- Grid column -->
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
                             <p class="">Newsletter </p>
@@ -56,7 +57,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Grid column -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -74,8 +74,8 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3">
-        <p class="fw-light mt-4"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+    <div class="text-center">
+        <p class="fw-light "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>

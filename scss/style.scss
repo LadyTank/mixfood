@@ -34,6 +34,8 @@ p, h1 {
     color: $vertC;
 }
 
+
+
 // typographie écriture manuscrite
 .titreChoix {
     font-family: 'Give You Glory', cursive;
@@ -127,6 +129,11 @@ a.liVert:active {
 }
 
 // footer
+
+footer {
+    min-height:225px;
+}
+
 footer a {
     color: $success;
     text-decoration: none;

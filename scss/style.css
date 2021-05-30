@@ -102,6 +102,10 @@ a.liVert:active {
   height: auto;
 }
 
+footer {
+  min-height: 225px;
+}
+
 footer a {
   color: #157347;
   text-decoration: none;
