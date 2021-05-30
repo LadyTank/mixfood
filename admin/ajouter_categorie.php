@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 
         $nom_image = htmlspecialchars($_FILES['nom_image']['name']); //nom_image
         // upload image only if selected
-        if($nom_image != "") {
+        if ($nom_image != "") {
 
 
             // auto rename OUR image
@@ -63,7 +63,6 @@ if (!empty($_POST)) {
                 die();
             }
         }
-
     } else {
 
         $nom_image = "";
@@ -101,10 +100,10 @@ if (!empty($_POST)) {
 
 <div class="container m-auto">
     <div class="row">
-        <div class="col-sm-12 col-md-6 mx-auto p-4">
+        <div class="col-sm-12 col-md-6 m-auto my-5 p-5">
 
-            <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Entrer une nouvelle gatégorie</h2>
+            <div class="card m-auto alert alert-success p-5">
+                <h2 class="bg-light p-4 text-center mb-5">Nouvelle catégorie</h2>
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="">
 
@@ -144,7 +143,7 @@ if (!empty($_POST)) {
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-small btn-warning">AJOUTER</button>
+                    <button type="submit" class="btn btn-small btn-success mt-2 pull-right">AJOUTER</button>
 
                 </form> <!-- fin de formulaire -->
             </div><!-- Fin de card -->
