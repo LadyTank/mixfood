@@ -29,43 +29,47 @@ $nbr_food =  $sql->rowCount();
     <!-- <div class="row text-center border border-danger">
         <div class="col-12 col-md-6 col-lg-4 mb-3 border border-primary"> -->
 
-    <?php
+        <?php
+    // si il y a des données
     if ($nbr_food > 0) {
-        echo ' <div class="row text-center ">';
+        echo '<div class="row text-center">';
 
-        // there are record in the database
+        // Pour chaque  ligne
+        // on récupère la valeur de chaque clef 
 
         foreach ($result as $row) {
+            // on assigne chaque valeurs à une variable
             $id_produit = $row['id_produit'];
             $nom_produit = $row['nom_produit'];
             $produit_image  = $row['produit_image'];
             $produit_prix = $row['produit_prix'];
             $produit_ingredients = $row['produit_ingredients'];
+            // classe contenant les col bootstrap5
+            echo ' <div class="col-12 col-md-6 col-lg-4 mb-3 ">';
 
-            echo ' <div class="col-12 col-md-6 col-lg-4 mb-3">';
 
-
+            // si l'image du produit est vide ?
             if ($produit_image == '') {
-                // Display an error message 
+                // on affiche ce message 
                 echo 'image nexiste pas';
-            } else {
+            } else { //sinon
 
 
-                // Display the image
-                // ici tu peux rendre l image clickable
-                echo '<a href="' . SITEURL . '/pizza.php ">';
-                echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;"></a>';
+                // on affiche l'image / photo correspendante
+                // cette image est située dans img/produit
+                // 
+                echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">';
+                // en bas nous avont le code html de l'accordion plus le bouton
                 echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP6" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
-                '<h2 class="accordion-header" id="flush-head-accordionP6">';
-
+                '<h2 class="accordion-header" id="flush-head-accordionP6">'; 
                 echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP6" aria-expanded="false" aria-controls="flush-accordionP6" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
                     '</button>';
                 echo ' </h2>';
 
                 echo   ' <div id="flush-accordionP6" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP6" data-bs-parent="#accordionP6">';
                 echo '<div class="accordion-body">';
-                echo  ' <p>'  . $produit_ingredients . '</p>';
+                echo  ' <p>'  . $produit_ingredients . '</p>';// on affiche les incgrédientd
                 echo            '</div>';
                 echo    ' </div>';
                 echo ' </div>';
@@ -73,12 +77,11 @@ $nbr_food =  $sql->rowCount();
             }
 
             echo '</div>';
-        }
+        }// fin foreach
 
         echo '</div>';
     }
     ?>
-
 
 </div>
 <?php
