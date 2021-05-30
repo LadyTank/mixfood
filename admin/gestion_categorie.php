@@ -113,8 +113,41 @@ require_once 'inc/haut.php';
                 echo "<td>" . $row['disponible'] . "</td>";
                 echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i> la gategorie</a></td>";
             
-                echo "<td> <button <a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> la gategorie</a></button></td>";
+                echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i> la categorie  </a></td>";
                 echo    "<tr>";
+
+        ?>
+                   <div class="modal" id="modal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title">Supprimer la catégorie</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-danger">
+                        <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
+                        <p class="text-danger">Etes vous sûr de vouloir supprimerce cette gatégorie ?</p>
+                    
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abondone</button>
+                        <!-- l'action de supprimer est activée ici -->
+                        <?php echo "<a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> la gategorie</a>"?>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        
+        
+        
+        
+        
+        <?php
+
+
+
+
+
             }
         ?>
 
@@ -123,30 +156,7 @@ require_once 'inc/haut.php';
     </table>
 
 
-        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
-                    </div>
-                
-                    <div class="modal-body">
-                        <p>You are about to delete one track, this procedure is irreversible.</p>
-                        <p>Do you want to proceed?</p>
-                        <p class="debug-url"></p>
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-danger btn-ok">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
 
 
 <?php require_once 'inc/bas.php' ?>
