@@ -1,8 +1,7 @@
 <?php
 include 'inc/init.php';
 $sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie  WHERE disponible='oui' AND en_vedette ='oui' ");
-//execute the sql statement as an object NOT an array
-// on execute la requte sql 
+
 $sql->execute();
 // fetch all, récuperer toutes les entrées de données par default PDO::FETCH_BOTH est utilisé
 $result =   $sql->fetchAll();

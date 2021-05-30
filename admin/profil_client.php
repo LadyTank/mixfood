@@ -176,12 +176,9 @@ include 'inc/haut.php';
     <div class="col-12 row " id="blocResponsive">
         <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2" id="sectionR1">
 
-            <h2 class="text-white text-center espace">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h2>
-
-            <hr>
             <div class="card mx-auto alert alert-success">
                 <div class="card-body ">
-                    <h5 class="card-title text-center">Informations</h5>
+                    <h5 class="card-title text-center mb-4">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h5>
 
                     <ul class="list-group list-group-horizontal-md list-group-horizontal-lg">
                         <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Numéro de client :<br> <?php echo $_SESSION['utilisateur']['id_utilisateur']; ?> </li>
@@ -212,7 +209,6 @@ include 'inc/haut.php';
         if (estAdmin()) {
             echo '
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-            <h2 class="text-center text-white mb-4 espace"> Actions </h2>
             <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Utilisateur
@@ -233,6 +229,8 @@ include 'inc/haut.php';
                     <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
+            <h2 class="text-center text-white mb-4 espace"> Actions </h2>
+
             <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                     Produit
