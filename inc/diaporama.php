@@ -35,10 +35,10 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="img/pizzap.jpg" class="d-block w-100" alt="..." style="object-fit: contain;">
+            <img src="img/pizzaH.jpg" class="d-block w-100" alt="pizza succulente">
         </div>
         <div class="carousel-item">
-            <img src="img/sushi12p.jpg" class="d-block w-100" alt="..." style="object-fit: contain;">
+            <img src="img/sushi2H.jpg" class="d-block w-100" alt="sushi alléchant">
         </div>
 
     </div>
