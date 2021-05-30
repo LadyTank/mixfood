@@ -63,7 +63,7 @@
                     <h6 class="text-uppercase text-center mb-4 font-weight-bold vert">Suivez-nous</h6>
 
                     <!-- Facebook -->
-                    <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
+                    <p class="text-center text-md-left mt-5"><a href="https://fr-fr.facebook.com/" target="_blank"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
 
                 </div>
             </div>
