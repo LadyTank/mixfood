@@ -93,14 +93,15 @@ require_once 'inc/haut.php';
                 // ici on fait on modal situé plus bas
                 // cette modal ajoute un averstissement de plus
                 // cette une fonctionnalité de sécurité utilse
-                echo '<td> <a data-bs-toggle="modal" href="#modal_'.$row['id_produit'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';
+                echo '<td> <a data-bs-toggle="modal" href="#modal_'.$row['id_produit'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';// on appelle la modal ici via son id
                 
                 echo    "</tr>";
 
                 // on bas c'est le modal 
                 // affiche un message important
                 ?> 
-                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
+                
+                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">// on renomme les id à chaque itération
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -109,7 +110,7 @@ require_once 'inc/haut.php';
                         </div>
                         <div class="modal-body text-danger">
                         <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
-                        <p class="text-danger">Etes vous sûr de vouloir supprimerce produit ?</p>
+                        <p class="text-danger">Etes vous sûr de vouloir supprimer ce produit ?</p>
                     
                         </div>
                         <div class="modal-footer">

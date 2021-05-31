@@ -117,16 +117,16 @@ require_once 'inc/haut.php';
                 echo    "<tr>";
 
                 ?> 
-                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
+                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">// on renomme les id à chaque itération
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title">Supprimer ce produit</h5>
+                        <h5 class="modal-title">Supprimer la catégorie</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-danger">
                         <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
-                        <p class="text-danger">Etes vous sûr de vouloir supprimerce produit ?</p>
+                        <p class="text-danger">Etes vous sûr de vouloir supprimer cette catégorie ?</p>
                     
                         </div>
                         <div class="modal-footer">
