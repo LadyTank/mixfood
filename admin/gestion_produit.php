@@ -89,17 +89,18 @@ require_once 'inc/haut.php';
                 echo "<td>" . $row['produit_vedette'] . "</td>";
                 echo "<td>" . $row['produit_disponible'] . "</td>";
                 // liens vers la modification du produit
-                echo "<td> <a href=\"modifier_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-warning \"><i class=\"fas fa-user-edit\"></i> le produit</a></td>";
+                echo "<td> <a href=\"modifier_produit.php?id_produit=" .$row['id_produit'] . "\" class=\"btn btn-warning \"><i class=\"fas fa-user-edit\"></i></a></td>";
                 // ici on fait on modal situé plus bas
                 // cette modal ajoute un averstissement de plus
                 // cette une fonctionnalité de sécurité utilse
-                echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i> le produit </a></td>";
-                echo    "<tr>";
+                echo '<td> <a data-bs-toggle="modal" href="#modal_'.$row['id_produit'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';
+                
+                echo    "</tr>";
 
                 // on bas c'est le modal 
                 // affiche un message important
                 ?> 
-                <div class="modal" id="modal">
+                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -112,19 +113,13 @@ require_once 'inc/haut.php';
                     
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abondone</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abandonne</button>
                         <!-- l'action de supprimer est activée ici -->
-                        <?php echo " <a href=\"supprimer_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-danger \"><i class=\"fas fa-trash-alt\"></i> le produit</a>"; ?>
+                        <?php echo " <a href=\"supprimer_produit.php?id_produit=" .$row['id_produit']. "\" class=\"btn btn-danger \"><i class=\"fas fa-trash-alt\"></i> </a>"; ?>
                         </div>
                     </div>
                 </div>
                 </div>
-                
-                
-                
-                
-                
-                
                 <?php
             }
             ?>

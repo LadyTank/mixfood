@@ -113,36 +113,31 @@ require_once 'inc/haut.php';
                 echo "<td>" . $row['disponible'] . "</td>";
                 echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i> la categorie</a></td>";
             
-                echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i> la categorie  </a></td>";
+                echo '<td> <a data-bs-toggle="modal" href="#modal_'.$row['id_categorie'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';
                 echo    "<tr>";
 
-        ?>
-                   <div class="modal" id="modal">
+                ?> 
+                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title">Supprimer la catégorie</h5>
+                        <h5 class="modal-title">Supprimer ce produit</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-danger">
-                        <p class="text-danger">Attention! Vous êtes sur le point de faire une action irréversible</p>
-                        <p class="text-danger">Êtes vous sûr de vouloir supprimer ce cette catégorie ?</p>
+                        <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
+                        <p class="text-danger">Etes vous sûr de vouloir supprimerce produit ?</p>
                     
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abondone</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abandonne</button>
                         <!-- l'action de supprimer est activée ici -->
-                        <?php echo "<a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> confirmé</a>"?>
+                        <?php echo " <a href=\"supprimer_produit.php?id_produit=" .$row['id_produit']. "\" class=\"btn btn-danger \"><i class=\"fas fa-trash-alt\"></i> </a>"; ?>
                         </div>
                     </div>
                 </div>
                 </div>
-        
-        
-        
-        
-        
-        <?php
+                <?php
 
 
 

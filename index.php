@@ -32,9 +32,11 @@ include 'inc/diaporama.php';
     <h2 class="text-center mt-5 text-light titreChoix d-none d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
 
     <?php
+
+    
     // section destop
     if ($nbr_categorie > 0) {
-        // there are record in the database
+        // il y a des données dans la bdd
         echo ' <div class="row">';
         foreach ($result as $row) {
             $id_categorie = $row['id_categorie'];
@@ -43,18 +45,20 @@ include 'inc/diaporama.php';
 
             echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-md-block d-lg-block">';
             if ($nom_image == '') {
-                // Display an error message 
-                echo 'image NOT found';
+                // affiche une message d'erreur
+                echo 'image introuvable';
             } else {
-                // Display the image
+                // on affiche la photo si le nom de l'image existe dans la bdd
+                echo '<a href="' . SITEURL . '/'.$nom_categorie.'.php ">';
                 echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                echo '</a>';
             }
         }
         echo '</div>';
     }
     // section mobile
     if ($nbr_categorie > 0) {
-        // there are record in the database
+        // il y a des données dans la bdd
         echo ' <div class="row">';
         foreach ($result as $row) {
             $id_categorie = $row['id_categorie'];
@@ -63,11 +67,13 @@ include 'inc/diaporama.php';
 
             echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-sm-block d-lg-none d-md-none">';
             if ($nom_image == '') {
-                // Display an error message 
+                // affiche une message d'erreur
                 echo 'image NOT found';
             } else {
-                // Display the image
-                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="100%" height="100%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                      // on affiche la photo si le nom de l'image existe dans la bdd
+                      echo '<a href="' . SITEURL . '/'.$nom_categorie.'.php ">';
+                      echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                      echo '</a>';
             }
         }
         echo '</div>';
