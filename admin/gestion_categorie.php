@@ -102,11 +102,8 @@ require_once 'inc/haut.php';
                 <?php
                     echo "<td>" . $row['en_vedette'] . "</td>";
                     echo "<td>" . $row['disponible'] . "</td>";
-                    echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i></a></td>";
-
-                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td>";
-                    echo    "</tr>";
-
+                    echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-success \" ><i class=\"fas fa-user-edit\"></i></a></td>";
+                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td></tr>";
                 ?>
                 <div class="modal" id="modal">
                     <div class="modal-dialog modal-sm">
