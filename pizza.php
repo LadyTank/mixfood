@@ -21,10 +21,8 @@ $nbr_food =  $sql->rowCount();
 <!-- ==================================================== -->
 <!-- ==================== Card Pizza ==================== -->
 <!-- ==================================================== -->
-<h1 class="titreChoix text-white text-center mt-5">Nos Pizzas</h1>
+<h1 class="titreChoix text-white text-center mt-5">Nos pizzas</h1>
 <div class="container bg-dark py-2 pt-5 pb-4 my-3 img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">
-    <!-- <div class="row text-center border border-danger">
-        <div class="col-12 col-md-6 col-lg-4 mb-3 border border-primary"> -->
 
     <?php
     // si il y a des données
@@ -57,7 +55,7 @@ $nbr_food =  $sql->rowCount();
                 // 
                 echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">';
                 // en bas nous avont le code html de l'accordion plus le bouton
-                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP" style="width:50%">';
+                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP' . $id_produit . '" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
                 '<h2 class="accordion-header" id="flush-head-accordionP">';
                 echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP" aria-expanded="false" aria-controls="flush-accordionP" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
@@ -79,8 +77,6 @@ $nbr_food =  $sql->rowCount();
         echo '</div>';
     }
     ?>
-
-
 </div>
 <?php
 include_once 'inc/bas.php';

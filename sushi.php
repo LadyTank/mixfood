@@ -15,7 +15,7 @@ $sql->execute();
 $result = $sql->fetchAll();
 //var_dump($result);
 
-// count the number of admin in the database
+// compte le nombre de données
 $nbr_food =  $sql->rowCount();
 
 ?>
@@ -24,8 +24,6 @@ $nbr_food =  $sql->rowCount();
 <!-- ==================================================== -->
 <h1 class="titreChoix text-white text-center mt-5">Nos sushis</h1>
 <div class="container bg-dark py-2 pt-5 pb-4 my-3 img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">
-    <!-- <div class="row text-center border border-danger">
-        <div class="col-12 col-md-6 col-lg-4 mb-3 border border-primary"> -->
 
     <?php
     // si il y a des données
