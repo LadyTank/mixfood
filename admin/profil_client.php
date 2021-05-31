@@ -97,7 +97,7 @@ if (!empty($_POST)) { // Si des données sont en POST
 include 'inc/haut.php';
 ?>
 
-<main class="container m-2 mx-auto p-2 row">
+<main class="container m-2 mt-4 mx-auto p-2 row">
     <?php
     if (estAdmin()) {
         echo '
@@ -158,7 +158,7 @@ include 'inc/haut.php';
     }
     ?>
 
-    <h1 class="mt-4 text-center typoChoix text-white d-none d-lg-block d-md-block espace">Bienvenue sur votre profil
+    <h1 class="m-5 text-center typoChoix text-white d-none d-lg-block d-md-block espace">Bienvenue sur votre profil
         <?php
         if (estAdmin()) {
             echo ' administrateur';
@@ -173,7 +173,7 @@ include 'inc/haut.php';
     echo $contenu;
     ?>
 
-    <div class="col-12 row " id="blocResponsive">
+    <div class="col-12 row mb-4" id="blocResponsive">
         <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2" id="sectionR1">
 
             <div class="card mx-auto alert alert-success">
@@ -214,9 +214,7 @@ include 'inc/haut.php';
                     Utilisateur
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item liVert" href="manage_utilisateur_client.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="#">Modifier</a></li>
-                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Ajouter ADMIN en cours</a></li>
                 </ul>
             </div>
             <div class="dropdown col-md-6 mb-3">
@@ -225,8 +223,7 @@ include 'inc/haut.php';
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item liVert" href="ajouter_categorie.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="modifier_categorie.php">Modifier</a></li>
-                    <li><a class="dropdown-item liVert" href="supprimer_categorie.php">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="gestion_categorie.php">Modifier / Supprimer</a></li>
                 </ul>
             </div>
             <h2 class="text-center text-white mb-4 espace"> Actions </h2>
@@ -237,8 +234,7 @@ include 'inc/haut.php';
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                     <li><a class="dropdown-item liVert" href="ajouter_produit.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item liVert" href="supprimer_produit.php">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="gestion_produit.php">Modifier</a></li>
                 </ul>
             </div>
             <div class="col-md-6 mb-23">
