@@ -5,7 +5,7 @@ include 'inc/init.php';
 // $contenu est dans la page init.php
 
 if (!empty($_POST)) { // Si des données sont en POST
-    jeprint_r($_POST);
+    // jeprint_r($_POST);
     // GESTION DES DONNEES POST ENVOYEES
     if (!isset($_POST['mot_de_passe']) || strlen($_POST['mot_de_passe']) < 4 || strlen($_POST['mot_de_passe']) > 20) {
         $contenu .= '<div class="alert alert-danger">Le mot de passe doit contenir entre 4 et 20 caractères.</div>';
