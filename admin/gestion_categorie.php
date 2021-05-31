@@ -93,7 +93,7 @@ require_once 'inc/haut.php';
                         if ($nom_image != '') {
                         ?>
                             <!-- mettre l'image en php et reduire ce passage html -->
-                            <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $nom_image; ?>" width="100px">
+                            <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $nom_image; ?>" width="100">
                     </td>
                 <?php
                         }
