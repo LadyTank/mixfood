@@ -65,7 +65,6 @@ if (!empty($_POST)) {
     }
 
     // 2. On prepare la requête sql . Les données seront persister des que le bouton submit est activé
-
     $sql1 = $pdoSITE->prepare("INSERT INTO produit SET  id_categorie='$id_categorie', nom_produit ='$nom_produit', produit_image ='$produit_image',  produit_ingredients='$produit_ingredients',produit_prix='$produit_prix', produit_vedette='$produit_vedette',produit_disponible ='$produit_disponible' ");
     //var_dump( $sql1);
     // On execute la requête
