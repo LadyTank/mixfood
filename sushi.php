@@ -56,14 +56,14 @@ $nbr_food =  $sql->rowCount();
                 // 
                 echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">';
                 // en bas nous avont le code html de l'accordion plus le bouton
-                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionS" style="width:50%">';
+                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionS' . $id_produit . '" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
-                '<h2 class="accordion-header" id="flush-head-accordionS">';
-                echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionS" aria-expanded="false" aria-controls="flush-accordionS" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
+                '<h2 class="accordion-header" id="flush-head-accordionS' . $id_produit . '">';
+                echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionS' . $id_produit . '" aria-expanded="false" aria-controls="flush-accordionS' . $id_produit . '" style="background-color: #0a5846ab; color: #fff">' . $nom_produit . ' ' . $produit_prix . ' €' .
                     '</button>';
                 echo ' </h2>';
 
-                echo   ' <div id="flush-accordionS" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionS" data-bs-parent="#accordionS">';
+                echo   ' <div id="flush-accordionS' . $id_produit . '" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionS' . $id_produit . '" data-bs-parent="#accordionS' . $id_produit . '">';
                 echo '<div class="accordion-body">';
                 echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les incgrédientd
                 echo            '</div>';

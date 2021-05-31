@@ -1,4 +1,8 @@
-<!-- Remove the container if you want to extend the Footer to full width. -->
+<?php
+// gestion de la newsletter
+
+
+?>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white container-fluid bg-dark">
@@ -35,12 +39,14 @@
 
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-5">
-                    <h6 class="text-uppercase mb-4 font-weight-bold vert">CONTACT</h6>
+                    <a href="../contact.php" class="vert">
+                        <h6 class="text-uppercase mb-4 font-weight-bold vert">CONTACT</h6>
+                    </a>
                     <p>
-                        <a class="text-white" href="connexion_client2.php">Connexion</a>
+                        <a class="text-white" href="admin/connexion_client2.php">Connexion</a>
                     </p>
                     <p>
-                        <a class="text-white" href="../index.php">Menu</a>
+                        <a class="text-white" href="index.php">Menu</a>
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -50,8 +56,10 @@
                         <div class="subcribe-form fl-wrap">
                             <p class="vert">Newsletter </p>
                             <form id="subscribe" novalidate="true">
-                                <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Votre email" spellcheck="false" type="text">
-                                <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button>
+                                <input class="emailNews" name="email_news" id="email_news" placeholder="Votre email" spellcheck="false" type="text">
+
+                                <i class="fa fa-rss btn btn-success subscribe-button" type="submit" id="subscribe-button"> GO</i>
+
                                 <label for="subscribe-email" class="subscribe-message"></label>
                             </form>
                         </div>
@@ -61,7 +69,6 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-5">
                     <h6 class="text-uppercase text-center mb-4 font-weight-bold vert">Suivez-nous</h6>
-
                     <!-- Facebook -->
                     <p class="text-center text-md-left mt-3"><a href="https://fr-fr.facebook.com/" target="_blank"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
 
@@ -75,7 +82,7 @@
 
     <!-- Copyright -->
     <div class="text-center">
-        <p class="text-end text-muted "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+        <p class="text-end mx-3 text-muted"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>
