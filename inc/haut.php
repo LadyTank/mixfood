@@ -56,7 +56,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="container col-sm-11 col-md-6 col-lg-3  navbar-collapse collapse ">
+            <div class="container col-sm-11 col-md-6 col-lg-3 justify-content-center navbar-collapse collapse ">
                 <?php
 
                 if (estConnecte()) { // si membre utilisateur connecté
@@ -67,7 +67,7 @@
                     }
                     echo '<a class="nav-link lienBlanc espace btn btn-danger nav-item m-2 col-sm-12 col-md-6 col-xl-6 mt-4" href="admin/profil_client.php?action=deconnexion">Déconnexion</a>';
                 } else { //sinon
-                    echo '<a class="nav-link text-dark espace btn btn-light nav-item m-2 col-sm-12 col-md-6 col-xl-6  btn-I" href="admin/inscription_client2.php">Inscription</a>';
+                    echo '<a class="nav-link text-dark espace btn btn-light nav-item m-2 col-sm-12 col-md-6 col-xl-6 btn-I" href="admin/inscription_client2.php">Inscription</a>';
 
                     echo '<a class="nav-link lienBlanc espace btn btn-success nav-item m-2 col-sm-12 col-md-6 col-xl-6 " href="admin/connexion_client2.php">Connexion</a>';
                 }
