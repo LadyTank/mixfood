@@ -44,7 +44,7 @@ include 'inc/diaporama.php';
             echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-md-block d-lg-block">';
             if ($nom_image == '') {
                 // Display an error message 
-                echo 'image NOT found';
+                echo 'image non trouvée';
             } else {
                 // Display the image
                 echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
@@ -64,7 +64,7 @@ include 'inc/diaporama.php';
             echo ' <div class="col-sm-12 col-md-6 col-lg-6 mt-3  text-center mb-5 d-xs-block d-sm-block d-lg-none d-md-none">';
             if ($nom_image == '') {
                 // Display an error message 
-                echo 'image NOT found';
+                echo 'image non trouvée';
             } else {
                 // Display the image
                 echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="80%" height="80%" style="background-color:#28a745; border-color:#28a745;"></div>';
