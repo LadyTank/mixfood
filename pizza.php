@@ -1,7 +1,5 @@
 <?php
-// author: baroude ntsiba
-// contributor : Audrey
-// contributor : Alexandre 
+
 include 'inc/init.php';
 include_once 'inc/haut.php';
 
@@ -23,10 +21,8 @@ $nbr_food =  $sql->rowCount();
 <!-- ==================================================== -->
 <!-- ==================== Card Pizza ==================== -->
 <!-- ==================================================== -->
-<h1 class="titreChoix text-white text-center mt-5">Nos Pizzas</h1>
+<h1 class="titreChoix text-white text-center mt-5">Nos pizzas</h1>
 <div class="container bg-dark py-2 pt-5 pb-4 my-3 img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">
-    <!-- <div class="row text-center border border-danger">
-        <div class="col-12 col-md-6 col-lg-4 mb-3 border border-primary"> -->
 
     <?php
     // si il y a des données
@@ -50,7 +46,7 @@ $nbr_food =  $sql->rowCount();
             // si l'image du produit est vide ?
             if ($produit_image == '') {
                 // on affiche ce message 
-                echo 'image nexiste pas';
+                echo '<p>l\'image n\'existe pas</p>';
             } else { //sinon
 
 
@@ -67,9 +63,9 @@ $nbr_food =  $sql->rowCount();
                     '</button>';
                 echo ' </h2>';
 
-                echo   ' <div id="flush-accordionP6" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP6" data-bs-parent="#accordionP6">';
+                echo   ' <div id="flush-accordionP" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP" data-bs-parent="#accordionP">';
                 echo '<div class="accordion-body">';
-                echo  ' <p>'  . $produit_ingredients . '</p>';// on affiche les incgrédientd
+                echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les incgrédientd
                 echo            '</div>';
                 echo    ' </div>';
                 echo ' </div>';
@@ -77,13 +73,11 @@ $nbr_food =  $sql->rowCount();
             }
 
             echo '</div>';
-        }// fin foreach
+        } // fin foreach
 
         echo '</div>';
     }
     ?>
-
-
 </div>
 <?php
 include_once 'inc/bas.php';

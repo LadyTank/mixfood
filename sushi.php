@@ -1,7 +1,5 @@
 <?php
-// author: baroude ntsiba
-// contributor : Audrey
-// contributor : Alexandre 
+
 include 'inc/init.php';
 include_once 'inc/haut.php';
 
@@ -9,27 +7,25 @@ $sql = $pdoSITE->prepare("SELECT p.produit_prix, p.id_produit, p.produit_image, 
 FROM produit_categorie pc , produit p
 WHERE pc.id_categorie=p.id_categorie  AND pc.nom_categorie='sushi' and p.produit_disponible='oui'");
 
-//execute the sql statement as an object NOT an array
+//execute la requête
 
 $sql->execute();
 
-// fetch all rows into array, by default PDO::FETCH_BOTH is used
+// on récupère toutes les données par defaut fetchAll utilise PDO::FETCH_BOTH 
 $result = $sql->fetchAll();
 //var_dump($result);
 
-// count the number of admin in the database
+// compte le nombre de données
 $nbr_food =  $sql->rowCount();
 
 ?>
 <!-- ==================================================== -->
-<!-- ==================== Card Pizza ==================== -->
+<!-- ==================== Card sushi ==================== -->
 <!-- ==================================================== -->
 <h1 class="titreChoix text-white text-center mt-5">Nos sushis</h1>
 <div class="container bg-dark py-2 pt-5 pb-4 my-3 img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">
-    <!-- <div class="row text-center border border-danger">
-        <div class="col-12 col-md-6 col-lg-4 mb-3 border border-primary"> -->
 
-        <?php
+    <?php
     // si il y a des données
     if ($nbr_food > 0) {
         echo '<div class="row text-center">';
@@ -51,7 +47,7 @@ $nbr_food =  $sql->rowCount();
             // si l'image du produit est vide ?
             if ($produit_image == '') {
                 // on affiche ce message 
-                echo 'image nexiste pas';
+                echo '<p>l\'image n\'existe pas</p>';
             } else { //sinon
 
 
@@ -68,9 +64,9 @@ $nbr_food =  $sql->rowCount();
                     '</button>';
                 echo ' </h2>';
 
-                echo   ' <div id="flush-accordionP6" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP6" data-bs-parent="#accordionP6">';
+                echo   ' <div id="flush-accordionS" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionS" data-bs-parent="#accordionS">';
                 echo '<div class="accordion-body">';
-                echo  ' <p>'  . $produit_ingredients . '</p>';// on affiche les incgrédientd
+                echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les incgrédientd
                 echo            '</div>';
                 echo    ' </div>';
                 echo ' </div>';
@@ -78,7 +74,7 @@ $nbr_food =  $sql->rowCount();
             }
 
             echo '</div>';
-        }// fin foreach
+        } // fin foreach
 
         echo '</div>';
     }

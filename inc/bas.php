@@ -1,4 +1,37 @@
-<!-- Remove the container if you want to extend the Footer to full width. -->
+<?php
+// gestion de la newsletter
+if (isset($_POST['newsletterform'])) {
+    if (isset($_POST['newsletter'])) {
+        if (!empty($_POST['newsletter'])) {
+            $newsletter = htmlspecialchars($_POST['newsletter']);
+            if (filter_var($newsletter, FILTER_VALIDATE_EMAIL)) {
+                $reqip = $pdoSITE->prepare("SELECT * FROM newsletter WHERE ip = ?");
+                $reqip->execute(array($_SERVER['REMOTE_ADDR']));
+                $ipexist = $reqip->rowCount();
+                if ($ipexist == 0) {
+                    $reqmail = $pdoSITE->prepare("SELECT * FROM newsletter WHERE email = ?");
+                    $reqmail->execute(array($newsletter));
+                    $mailexist = $reqmail->rowCount();
+                    if ($mailexist == 0) {
+                        $sql = $pdoSITE->prepare('INSERT INTO newsletter(email,ip,dates) VALUES (?,?,NOW())');
+                        $sql->execute(array($newsletter, $_SERVER['REMOTE_ADDR']));
+                        header("location: index.php");
+                    } else {
+                        $erreur = "Vous êtes déjà inscrit à la Newsletter..";
+                    }
+                } else {
+                    $erreur = "Vous êtes déjà inscrit à la Newsletter..";
+                }
+            } else {
+                $erreur = "Vous devez indiquer une adresse e-mail..";
+            }
+        } else {
+            $erreur = "Vous devez remplir tout les champs vides..";
+        }
+    }
+}
+?>
+
 
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white container-fluid bg-dark">
@@ -51,10 +84,10 @@
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
                             <p class="vert">Newsletter </p>
-                            <form id="subscribe" novalidate="true">
-                                <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Votre email" spellcheck="false" type="text">
-                                <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button>
-                                <label for="subscribe-email" class="subscribe-message"></label>
+                            <form method="POST">
+                                <label>Adresse e-mail</label><br />
+                                <input type="email" name="newsletter" /><br /><br />
+                                <input type="submit" name="newsletterform" value="Envoyer" />
                             </form>
                         </div>
                     </div>

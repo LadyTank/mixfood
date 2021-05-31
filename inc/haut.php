@@ -28,51 +28,50 @@
 
 <body class="">
 
-    <header class="container-fluid bg-dark">
-        <!-- navbar -->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
-                <div class="container-fluid">
-                    <a class="navbar-brand typoChoix titreLogo d-none d-lg-block d-md-block" href="index.php">MIXFOOD</a>
-                    <a class="navbar-brand typoChoix titreLogo d-sm-block d-md-none d-lg-none" href="index.php"><img src="img/logoMobile.png" alt="logo Mixfood Mobile"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+    <!-- navbar -->
+    <div class="container-fluid bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="navbar mixfood">
+            <div class="container-fluid">
+                <a class="navbar-brand typoChoix titreLogo d-none d-lg-block d-md-block" href="index.php">MIXFOOD</a>
+                <a class="navbar-brand typoChoix titreLogo d-sm-block d-md-none d-lg-none" href="index.php"><img src="img/logoMobile.png" alt="logo Mixfood Mobile"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <div class="navbar-collapse collapse justify-content-center" id="navbarM">
-                        <ul class="navbar-nav align-items-center ">
-                            <li class="nav-item">
-                                <a class="nav-link espace" aria-current="page" href="index.php">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link espace" href="sushi.php">SUSHI</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link espace" href="pizza.php">PIZZA</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link espace" href="contact.php">Contact</a>
-                            </li>
+                <div class="navbar-collapse collapse justify-content-center" id="navbarM">
+                    <ul class="navbar-nav align-items-center ">
+                        <li class="nav-item">
+                            <a class="nav-link espace" aria-current="page" href="index.php">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link espace" href="sushi.php">SUSHI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link espace" href="pizza.php">PIZZA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link espace" href="contact.php">Contact</a>
+                        </li>
 
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-                <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-between navbar-collapse collapse ">
-                    <?php
+            </div>
+            <div class="container col-sm-11 col-md-6 col-lg-3  navbar-collapse collapse ">
+                <?php
 
-                    if (estConnecte()) { // si membre utilisateur connecté
-                        if (estAdmin()) { // si le membre connecté est administrateur
-                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">ADMIN</a></button>';
-                        } else {
-                            echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="admin/profil_client.php">PROFIL</a></button>';
-                        }
-                        echo '<button class="btn btn-danger nav-item"><a class="nav-link lienBlanc espace" href="admin/profil_client.php?action=deconnexion">Déconnexion</a></button>';
-                    } else { //sinon
-                        echo '<button class=" btn btn-light nav-item m-2 btn-I"><a class="nav-link text-dark espace" href="admin/inscription_client2.php">Inscription</a></button>';
-
-                        echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="admin/connexion_client2.php">Connexion</a></button>';
+                if (estConnecte()) { // si membre utilisateur connecté
+                    if (estAdmin()) { // si le membre connecté est administrateur
+                        echo '<a class="nav-link lienBlanc espace btn btn-success nav-item m-2 col-sm-12 col-md-6 col-xl-6 mt-4" href="admin/profil_client.php">ADMIN</a>';
+                    } else {
+                        echo '<a class="nav-link lienBlanc espace btn btn-success nav-item m-2 m-2 col-sm-12 col-md-6 col-xl-6 mt-4" href="admin/profil_client.php">PROFIL</a>';
                     }
-                    ?>
-                </div>
-            </nav>
-    </header>
+                    echo '<a class="nav-link lienBlanc espace btn btn-danger nav-item m-2 col-sm-12 col-md-6 col-xl-6 mt-4" href="admin/profil_client.php?action=deconnexion">Déconnexion</a>';
+                } else { //sinon
+                    echo '<a class="nav-link text-dark espace btn btn-light nav-item m-2 col-sm-12 col-md-6 col-xl-6  btn-I" href="admin/inscription_client2.php">Inscription</a>';
+
+                    echo '<a class="nav-link lienBlanc espace btn btn-success nav-item m-2 col-sm-12 col-md-6 col-xl-6 " href="admin/connexion_client2.php">Connexion</a>';
+                }
+                ?>
+            </div>
+        </nav>
+    </div>

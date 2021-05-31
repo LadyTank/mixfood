@@ -29,7 +29,7 @@ include 'inc/diaporama.php';
 <!-- /container principal -->
 <div class="container mx-auto">
     <h2 class="text-center mt-5 text-light titreChoix d-none d-md-block d-lg-block"> Pourquoi choisir ?</h2>
-    <h2 class="text-center mt-5 text-light titreChoix d-none d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
+    <h2 class="text-center mt-5 text-light titreChoix  d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
 
     <?php
 
@@ -65,10 +65,10 @@ include 'inc/diaporama.php';
             $nom_categorie = $row['nom_categorie'];
             $nom_image  = $row['nom_image'];
 
-            echo ' <div class="col-6 mt-3  text-center mb-5 d-none d-sm-block d-lg-none d-md-none">';
+            echo ' <div class="col-sm-12 col-md-6 col-lg-6 mt-3  text-center mb-5 d-xs-block d-sm-block d-lg-none d-md-none">';
             if ($nom_image == '') {
                 // affiche une message d'erreur
-                echo 'image NOT found';
+                echo 'image introuvable';
             } else {
                       // on affiche la photo si le nom de l'image existe dans la bdd
                       echo '<a href="' . SITEURL . '/'.$nom_categorie.'.php ">';
@@ -81,12 +81,11 @@ include 'inc/diaporama.php';
     ?>
 
 
-
 </div><!-- /fin container-->
 
 <!-- INTRODUIRE LES PROMOTIONS ICI ???-->
 
-<div class="container mx-auto circleC">
+<div class="container mx-auto circleC d-none d-lg-block d-md-block">
 
     <div class=""><img src="img/chefC.jpg" alt="" class="alignRight img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
 

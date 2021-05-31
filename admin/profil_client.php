@@ -87,9 +87,9 @@ if (!empty($_POST)) { // Si des données sont en POST
         ));
 
         if ($succes) {
-            $contenu .= '<div class="alert alert-success">Votre profil est modifié</div>';
+            $contenu .= '<div class="alert alert-warning col-4 text-center mx-auto mb-4">Votre profil est modifié</div>';
         } else {
-            $contenu .= '<div class="alert alert-danger">Erreur lors de la modification !</div>';
+            $contenu .= '<div class="alert alert-warning col-4 text-center mx-auto mb-4">Erreur lors de la modification !</div>';
         }
     } // fin du if empty
 }
@@ -158,7 +158,7 @@ include 'inc/haut.php';
     }
     ?>
 
-    <h1 class="m-5 text-center typoChoix text-white d-none d-lg-block d-md-block espace">Bienvenue sur votre profil
+    <h1 class="my-4 text-center typoChoix text-white d-none d-lg-block d-md-block espace">Bienvenue sur votre profil
         <?php
         if (estAdmin()) {
             echo ' administrateur';
@@ -178,26 +178,39 @@ include 'inc/haut.php';
 
             <div class="card mx-auto alert alert-success">
                 <div class="card-body ">
-                    <h5 class="card-title text-center mb-4">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h5>
-
+                    <h5 class="card-title text-center text-capitalize pb-4">Bonjour <?php echo $fiche['prenom'] . ' ' . $fiche['nom']; ?> !</h5>
+                    <div class="list-group list-group-horizontal-lg list-group-horizontal-md">
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-2 col-lg-2 mt-3 mx-2">#</label>
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-5 col-lg-5 text-capitalize mt-3 mx-2">Prénom</label>
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-5 col-lg-5 text-capitalize mt-3 mx-2">Nom</label>
+                    </div>
                     <ul class="list-group list-group-horizontal-md list-group-horizontal-lg">
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Numéro de client :<br> <?php echo $_SESSION['utilisateur']['id_utilisateur']; ?> </li>
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Prénom :<br> <?php echo $fiche['prenom']; ?> </li>
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Nom : <br> <?php echo $fiche['nom']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-2 col-lg-2 m-1"><?php echo $_SESSION['utilisateur']['id_utilisateur']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-5 col-lg-5 text-capitalize  m-1"><?php echo $fiche['prenom']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-5 col-lg-5 text-capitalize m-1 "><?php echo $fiche['nom']; ?> </li>
                     </ul>
+                    <div class="list-group list-group-horizontal-lg list-group-horizontal-md">
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-5 col-lg-5 mt-3 mx-2">Email</label>
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-7 col-lg-7 text-capitalize mt-3 mx-2">Adresse</label>
+                    </div>
                     <ul class="list-group list-group-horizontal-lg">
-                        <li class="list-group-item col-sm-12 col-md-6 col-lg-6">Email :<br> <?php echo $fiche['email']; ?> </li>
-                        <li class="list-group-item col-sm-12 col-md-6 col-lg-6">Adresse :<br> <?php echo $fiche['adresse']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-5 col-lg-5 m-1"><?php echo $fiche['email']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-7 col-lg-7 text-capitalize  m-1"><?php echo $fiche['adresse']; ?> </li>
                     </ul>
+                    <div class="list-group list-group-horizontal-lg list-group-horizontal-md">
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-3 col-lg-3 mt-3 mx-2">CP</label>
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-4 col-lg-4 text-capitalize mt-3 mx-2">Ville</label>
+                        <label for="id_utilisateur" class="form-label col-sm-12 col-md-5 col-lg-5 mt-3 mx-2">Téléphone</label>
+                    </div>
                     <ul class="list-group list-group-horizontal-lg">
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Code postal :<br> <?php echo $fiche['code_postal']; ?> </li>
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Ville :<br> <?php echo $fiche['ville']; ?> </li>
-                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4">Téléphone :<br> <?php echo $fiche['telephone']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-3 col-lg-3 m-1"><?php echo $fiche['code_postal']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-4 col-lg-4 text-capitalize m-1"><?php echo $fiche['ville']; ?> </li>
+                        <li class="list-group-item col-sm-12 col-md-5 col-lg-5 m-1"><?php echo $fiche['telephone']; ?> </li>
                     </ul>
                 </div>
                 <div class="row my-3 p-3 justify-content-center ">
                     <div class="col-6 text-center">
-                        <button type="button" class="btn btn-success btn-block" id="cacheImage">Modifier le profil</button>
+                        <button type="button" class="btn btn-success btn-block espace" id="cacheImage">Modifier le profil</button>
                     </div>
                 </div>
             </div>
@@ -219,7 +232,7 @@ include 'inc/haut.php';
             </div>
             <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Catégories
+                    Catégorie
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item liVert" href="ajouter_categorie.php">Ajouter</a></li>
@@ -234,7 +247,7 @@ include 'inc/haut.php';
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                     <li><a class="dropdown-item liVert" href="ajouter_produit.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="gestion_produit.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="gestion_produit.php">Modifier /Supprimer</a></li>
                 </ul>
             </div>
             <div class="col-md-6 mb-23">
@@ -247,8 +260,8 @@ include 'inc/haut.php';
 
     </div>
 
-    <div class="col-12 mx-auto m-2 p-2 cache">
-        <h2 class=" text-white text-center">Modifier votre profil</h2>
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2 cache">
+        <h2 class=" text-white text-center typoChoix espace">Modifier votre profil</h2>
 
         <hr>
         <!-- DEBUT DU FORMULAIRE -->
@@ -256,19 +269,19 @@ include 'inc/haut.php';
 
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6 d-none">
                 <!-- id_utilisateur -->
-                <label for="id_utilisateur" class="form-label">Numéro de client : </label>
-                <input type="text" class="form-control text-right" name="id_utilisateur" id="id_utilisateur" value="<?php echo $fiche['id_utilisateur']; ?>" disabled>
+                <label for="id_utilisateur" class="form-label">Numéro de client</label>
+                <input type="text" class="form-control text-right " name="id_utilisateur" id="id_utilisateur" value="<?php echo $fiche['id_utilisateur']; ?>" disabled>
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- nom -->
-                <label for="nom" class="form-label">Nom : </label>
-                <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $fiche['nom']; ?>">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control text-right text-capitalize" name="nom" id="nom" value="<?php echo $fiche['nom']; ?>">
             </div>
 
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- prenom -->
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $fiche['prenom']; ?>">
+                <input type="text " class="form-control text-right text-capitalize" name="prenom" id="prenom" value="<?php echo $fiche['prenom']; ?>">
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- mail -->
@@ -283,7 +296,7 @@ include 'inc/haut.php';
             <div class="form-group p-2">
                 <!-- adresse -->
                 <label for="adresse" class="form-label">Adresse postale</label>
-                <textarea name="adresse" id="adresse" class="form-control" placeholder="Votre nouvelle adresse"><?php echo $fiche['adresse']; ?></textarea>
+                <textarea name="adresse" id="adresse" class="form-control text-capitalize" placeholder="Votre nouvelle adresse"><?php echo $fiche['adresse']; ?></textarea>
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- code_postal -->
@@ -293,14 +306,14 @@ include 'inc/haut.php';
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- ville -->
                 <label for="ville" class="form-label">Ville</label>
-                <input type="text" class="form-control" name="ville" id="ville" value="<?php echo $fiche['ville']; ?>" placeholder="Votre nouvelle ville">
+                <input type="text" class="form-control text-capitalize" name="ville" id="ville" value="<?php echo $fiche['ville']; ?>" placeholder="Votre nouvelle ville">
             </div>
 
-            <div class="form-group text-center">
+            <div class="form-group text-center mt-4">
                 <!-- bouton reseat formulaire -->
-                <button class="btn btn-dark mt-3" type="reset" value="Reset">Effacer</button>
+                <button class="btn btn-dark mt-3 m-4 espace" type="reset" value="Reset">Effacer</button>
                 <!-- bouton envoyer -->
-                <button type="submit" class="btn btn-success mt-3">Modifier</button>
+                <button type="submit" class="btn btn-success mt-3 espace m-4">Modifier</button>
             </div>
         </form> <!-- fin de formulaire -->
     </div> <!-- fin col-12 -->
