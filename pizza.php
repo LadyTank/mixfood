@@ -58,11 +58,11 @@ $nbr_food =  $sql->rowCount();
                 echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP' . $id_produit . '" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
                 '<h2 class="accordion-header" id="flush-head-accordionP">';
-                echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP" aria-expanded="false" aria-controls="flush-accordionP" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
+                echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP' . $id_produit . '" aria-expanded="false" aria-controls="flush-accordionP' . $id_produit . '" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
                     '</button>';
                 echo ' </h2>';
 
-                echo   ' <div id="flush-accordionP" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP" data-bs-parent="#accordionP">';
+                echo   ' <div id="flush-accordionP' . $id_produit . '" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP' . $id_produit . '" data-bs-parent="#accordionP' . $id_produit . '">';
                 echo '<div class="accordion-body">';
                 echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les incgrédientd
                 echo            '</div>';
