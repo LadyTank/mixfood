@@ -93,6 +93,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 <script src="../../js/script.js"></script>
 
+<!-- Mes scripts !!! -->
+
+<script>
+    let boutonForm = document.querySelector('#cacheImage');
+
+    let formModif = document.querySelector('.cache');
+
+    function cliqueBouton() {
+        formModif.classList.toggle('cache');
+    }
+
+    boutonForm.addEventListener('click', cliqueBouton);
+</script>
+
+
 </body>
 
 </html>
