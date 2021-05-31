@@ -111,7 +111,7 @@ require_once 'inc/haut.php';
         <?php
                 echo "<td>" . $row['en_vedette'] . "</td>";
                 echo "<td>" . $row['disponible'] . "</td>";
-                echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i> la gategorie</a></td>";
+                echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] .  "\" class=\"btn btn-warning \" ><i class=\"fas fa-user-edit\"></i> la categorie</a></td>";
             
                 echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i> la categorie  </a></td>";
                 echo    "<tr>";
@@ -125,14 +125,14 @@ require_once 'inc/haut.php';
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-danger">
-                        <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
-                        <p class="text-danger">Etes vous sûr de vouloir supprimerce cette gatégorie ?</p>
+                        <p class="text-danger">Attention! Vous êtes sur le point de faire une action irréversible</p>
+                        <p class="text-danger">Êtes vous sûr de vouloir supprimer ce cette catégorie ?</p>
                     
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abondone</button>
                         <!-- l'action de supprimer est activée ici -->
-                        <?php echo "<a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> la gategorie</a>"?>
+                        <?php echo "<a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-danger \" ><i class=\"fas fa-trash-alt\"></i> confirmé</a>"?>
                         </div>
                     </div>
                 </div>

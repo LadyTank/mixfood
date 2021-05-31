@@ -32,7 +32,7 @@ include 'inc/haut.php';
             <img src="img/sushiDessin4.png" alt="dessin sushi contact" class="img-fluid">
         </div>
     </div> <!-- fin de row-->
-    <div class="col mx-auto text-center mt-4 map-responsive">
+    <div class="col mx-auto text-center mt-4 map-responsive rounded">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8645312510744!2d2.211644869512095!3d48.860793583226375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664cb18235a55%3A0x21fc823972e9be9c!2sCoton%20Fabrice!5e0!3m2!1sfr!2sfr!4v1621975926145!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </div> <!-- fin de container-->
