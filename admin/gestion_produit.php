@@ -9,7 +9,7 @@ require_once 'inc/haut.php';
 <main class="container">
     <h1 class="titreChoix text-center">Vos produits</h1>
 
-    <div class="container m-auto">
+    <div class="container m-auto my-5">
 
         <!-- button to ad admin  -->
         <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> un produit</a>

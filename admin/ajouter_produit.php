@@ -75,9 +75,9 @@ require_once 'inc/haut.php';
 <div class="container m-auto">
     <div class="row">
         <!-- début row -->
-        <div class="col-sm-12 col-md-6 mx-auto p-4">
-            <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Nouveau produit</h2>
+        <div class="col-sm-12 col-md-6 m-auto my-5 p-5">
+            <div class="card m-auto alert alert-success p-5">
+                <h2 class="bg-light p-4 text-center mb-5">Nouveau produit</h2>
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="">
                     <div class="form-group mb-3">
@@ -93,9 +93,9 @@ require_once 'inc/haut.php';
                         <input type="file" class="form-control text-right" name="produit_image" id="produit_image">
                     </div>
                     <div class="form-group mb-3">
-                    <label for="produit_categorie" class="bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i>Quelle est sa catégorie ?</label>
+                        <label for="produit_categorie" class="bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i>Quelle est sa catégorie ?</label>
                         <select class="form-select form-select-sm" name="categorie" id="categorie" aria-label="choix categorie">
-                        <option value="">....</option>';
+                            <option value="">....</option>';
                             <?php
                             // on recupere toutes les catégorie
                             $sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE disponible = 'oui' ");
@@ -126,7 +126,7 @@ require_once 'inc/haut.php';
                         <textarea class="form-control text-right" name="produit_ingredients" id="produit_ingredients" rows="3"></textarea>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="produit_vedette">produit vedette </label>
+                        <label for="produit_vedette">Produit vedette </label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
                             <label class="form-check-label" for="f">oui</label>
