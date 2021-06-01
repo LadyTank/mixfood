@@ -100,9 +100,9 @@ require_once 'inc/haut.php';
                 echo '<td> <a data-bs-toggle="modal" href="#modal_' . $row['id_categorie'] . '" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';
                 echo    "<tr>";
 
-            // on bas c'est le modal 
-              // affiche un message important
-              // on change le l'id du modal on y rajoutons l'id de chaque produit
+                // en bas c'est le modal 
+                // affiche un message important
+                // on change l'id du modal en y rajoutant l'id de chaque produit
             ?>
             <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
                 <div class="modal-dialog modal-sm">

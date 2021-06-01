@@ -33,7 +33,7 @@ include 'inc/diaporama.php';
 
     <?php
 
-    
+
     // section destop
     if ($nbr_categorie > 0) {
         // il y a des données dans la bdd
@@ -49,7 +49,7 @@ include 'inc/diaporama.php';
                 echo 'image introuvable';
             } else {
                 // on affiche la photo si le nom de l'image existe dans la bdd
-                echo '<a href="' . SITEURL . '/'.$nom_categorie.'.php ">';
+                echo '<a href="' . SITEURL . $nom_categorie . '.php ">';
                 echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
                 echo '</a>';
             }
@@ -70,10 +70,10 @@ include 'inc/diaporama.php';
                 // affiche une message d'erreur
                 echo 'image introuvable';
             } else {
-                      // on affiche la photo si le nom de l'image existe dans la bdd
-                      echo '<a href="' . SITEURL . '/'.$nom_categorie.'.php ">';
-                      echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
-                      echo '</a>';
+                // on affiche la photo si le nom de l'image existe dans la bdd
+                echo '<a href="' . SITEURL . '/' . $nom_categorie . '.php ">';
+                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                echo '</a>';
             }
         }
         echo '</div>';

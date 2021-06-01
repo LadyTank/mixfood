@@ -220,28 +220,30 @@ include 'inc/haut.php';
 
         <?php
         if (estAdmin()) {
-            echo '
+        ?>
+
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-            <div class= col-md-6 mt-5">
-                <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php" >
-                    Utilisateur
-                </a>
+                <div class="col-md-6 mt-5">
+                    <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php">
+                        Utilisateur
+                    </a>
+                </div>
+                <div class=" col-md-6 mt-5">
+                    <a type="button" class="btn btn-success btn-profil" type="button" id="buttonC" href="gestion_categorie.php">
+                        Catégorie
+                    </a>
+                </div>
+                <h2 class="text-center text-white mb-4 espace"> Actions </h2>
+                <div class="col-md-6 mb-5">
+                    <a class="btn btn-success btn-profil" type="button" id="boutonP" href="gestion_produit.php">
+                        Produit
+                    </a>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Commande</a>
+                </div>
             </div>
-            <div class=" col-md-6 mt-5">
-                <a type="button" class="btn btn-success btn-profil" type="button" id="buttonC" href="gestion_categorie.php">
-                    Catégorie
-                </a>
-            </div>
-            <h2 class="text-center text-white mb-4 espace"> Actions </h2>
-            <div class="col-md-6 mb-5">
-                <a class="btn btn-success btn-profil" type="button" id="boutonP" href="gestion_produit.php">
-                    Produit
-                </a>
-            </div>
-            <div class="col-md-6 mb-5">
-                <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Commande</a>
-            </div>
-        </div>';
+        <?php
         };
         ?>
 
