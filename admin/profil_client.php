@@ -223,20 +223,20 @@ include 'inc/haut.php';
         ?>
 
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-                <div class="col-md-6 mt-5">
-                    <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php">
-                        Utilisateur
-                    </a>
-                </div>
                 <div class=" col-md-6 mt-5">
                     <a type="button" class="btn btn-success btn-profil" type="button" id="buttonC" href="gestion_categorie.php">
                         Catégorie
                     </a>
                 </div>
-                <h2 class="text-center text-white mb-4 espace"> Actions </h2>
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mt-5">
                     <a class="btn btn-success btn-profil" type="button" id="boutonP" href="gestion_produit.php">
                         Produit
+                    </a>
+                </div>
+                <h2 class="text-center text-white mb-4 espace"> Actions </h2>
+                <div class="col-md-6 mb-5">
+                    <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php">
+                        Utilisateur
                     </a>
                 </div>
                 <div class="col-md-6 mb-5">

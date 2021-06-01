@@ -4,14 +4,14 @@
 
 /////////  Connexion a la base de données  ///////////
 // la racine
-define('SITEURL', 'http://localhost/mixfood/');
-define('LOCALHOST', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('SITEURL', 'http://audrey-saulnier.fr/');
+define('LOCALHOST', 'ftp.cluster029.hosting.ovh.net');
+define('DB_USERNAME', 'audreyj');
+define('DB_PASSWORD', 'AMdK8H46UUry');
 define('MIXFOOD', 'mixfood');
 
 
-$pdoSITE  = new PDO("mysql:host=LOCALHOST; dbname=MIXFOOD", DB_USERNAME, DB_PASSWORD);
+$pdoSITE  = new PDO("mysql:host=ftp.cluster029.hosting.ovh.net; dbname=audreyjtanky", DB_USERNAME, DB_PASSWORD);
 $pdoSITE->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

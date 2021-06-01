@@ -50,7 +50,7 @@ include 'inc/diaporama.php';
             } else {
                 // on affiche la photo si le nom de l'image existe dans la bdd
                 echo '<a href="' . SITEURL . $nom_categorie . '.php ">';
-                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="40%" height="40%" style="background-color:#28a745; border-color:#28a745;"></div>';
                 echo '</a>';
             }
         }
@@ -88,9 +88,10 @@ include 'inc/diaporama.php';
     <div class=""><img src="img/chefC.jpg" alt="" class="alignRight img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
 
     <h1 class="titreChoix p-4 text-left espace">À propos de nous ...</h1>
-    <p class="typoChoix text-justify p-4 m-4 espace">Bonjour je m'apelle Massimo zanoti, originaire de Naples en Italie.
-        Tous nos produits sont frais.
-        Après un voyage au Japon de 3 ans, je me suis dirigé de nouveau en France pour faire vivre cette nouvelle passion culinaire, et faire partager le savoir avec d'autres chef en France.
+    <p class="typoChoix text-justify p-4 m-4 espace">Bonjour je m'apelle Massimo zanoti, originaire de Naples en Italie.<br>
+        Tous nos produits sont frais et souvent régionaux.<br>
+        3 années au Japon pour apprendre l'art délicat des sushis et makis.<br>
+        Aujourd'hui, j'ai choisi Suresnes pour partager ma passion culinaire avec vous, et rapidement.
     </p>
 
 </div>
