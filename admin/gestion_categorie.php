@@ -7,7 +7,7 @@ require_once 'inc/haut.php';
 
 ?>
 <!-- menu principal -->
-<div class="container m-auto">
+<div class="container m-auto my-5 p-2">
     <?php
     // on active la session de suppression de category
     if (isset($_SESSION['supprimer'])) {
@@ -32,11 +32,10 @@ require_once 'inc/haut.php';
         unset($_SESSION['actualiser']);
     }
 
-
     ?>
 
     <!-- button to ad admin  -->
-    <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class="btn btn-primary my-2"><i class="fas fa-folder-plus"></i> Ajouter une catégorie</a>
+    <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class=" p-2 btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter une catégorie</a>
 
     <table class="table table-striped mx-auto table-success">
         <thead class="table-success">
@@ -48,7 +47,6 @@ require_once 'inc/haut.php';
                 <th>Disponible</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
-
             </tr>
         </thead>
         <tbody>
@@ -137,7 +135,7 @@ require_once 'inc/haut.php';
     </table>
 
 
+</div>
 
 
-
-    <?php require_once 'inc/bas.php' ?>
+<?php require_once 'inc/bas.php' ?>
