@@ -12,7 +12,7 @@ require_once 'inc/haut.php';
     <div class="container m-auto my-5">
 
         <!-- button to ad admin  -->
-        <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> un produit</a>
+        <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter produit</a>
 
         <table class="table table-striped mx-auto table-success">
             <thead class="table-success">
@@ -51,8 +51,6 @@ require_once 'inc/haut.php';
                 } else {
                     // no record found in the database
                 }
-
-
 
 
                 foreach ($result as $row) {
