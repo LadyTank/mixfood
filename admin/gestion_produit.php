@@ -17,7 +17,7 @@ require_once 'inc/haut.php';
         <table class="table table-striped mx-auto table-success">
             <thead class="table-success">
                 <tr>
-                    <th scope="col">ID</th>
+                    <!-- <th scope="col">ID</th> -->
                     <th scope="col">Catégorie</th>
                     <th scope="col">Produit</th>
                     <th scope="col">Image</th>
@@ -43,7 +43,7 @@ require_once 'inc/haut.php';
                 //var_dump($result);
 
                 // count the number of admin in the database
-                $nbr_produit =      $sql->rowCount();
+                $nbr_produit = $sql->rowCount();
 
                 if ($nbr_produit > 0) {
                     // there are record in the database
@@ -57,12 +57,19 @@ require_once 'inc/haut.php';
 
                 foreach ($result as $row) {
 
+
+                    $sql_cat_nam =  $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE `id_categorie` = " . $row['id_categorie'] . ";");
+
+                    $sql_cat_nam->execute();
+                    $cat_res = $sql_cat_nam->fetchAll();
+                    $cat_name = $cat_res[0]["nom_categorie"];
+
                     $produit_image  = $row['produit_image'];
 
-                    echo    "<tr>";
+                    echo "<tr>";
 
-                    echo "<td>" . $row['id_produit'] . "</td>";
-                    echo "<td>" . $row['id_categorie'] . "</td>";
+                    echo "<td>" . $cat_name . "</td>";
+                    // echo "<td>" . $row['nom_categorie'] . "</td>";
                     echo "<td>" . $row['nom_produit'] . "</td>";
 
                 ?>
@@ -71,7 +78,7 @@ require_once 'inc/haut.php';
 
                         if ($produit_image  != '') {
                         ?>
-                            <img src="<?php echo SITEURL; ?>img/produit/<?php echo $produit_image; ?>" width="100px">
+                            <img class="img-fluid" src="<?php echo SITEURL; ?>img/produit/<?php echo $produit_image; ?>">
 
                         <?php
 
@@ -118,51 +125,6 @@ require_once 'inc/haut.php';
                     </div>
 
 
-
-
-
-
-                    ?>
-                </td>
-            <?php
-                // affichage des donnés correspendant à chaque produit
-                echo " <td>" . $row['produit_ingredients'] . "</td>";
-                echo " <td>" . $row['produit_prix'] . "</td>";
-                echo "<td>" . $row['produit_vedette'] . "</td>";
-                echo "<td>" . $row['produit_disponible'] . "</td>";
-                // liens vers la modification du produit
-                echo "<td> <a href=\"modifier_produit.php?id_produit=" .$row['id_produit'] . "\" class=\"btn btn-warning \"><i class=\"fas fa-user-edit\"></i></a></td>";
-                // ici on fait on modal situé plus bas
-                // cette modal ajoute un averstissement de plus
-                // cette une fonctionnalité de sécurité utilse
-                echo '<td> <a data-bs-toggle="modal" href="#modal_'.$row['id_produit'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>';// on appelle la modal ici via son id
-                
-                echo    "</tr>";
-
-                // on bas c'est le modal 
-                // affiche un message important
-                ?> 
-                
-                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">// on renomme les id à chaque itération
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title">Supprimer ce produit</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-danger">
-                        <p class="text-danger">Attention! vous êtes sur le point de faire une action irreversible</p>
-                        <p class="text-danger">Etes vous sûr de vouloir supprimer ce produit ?</p>
-                    
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">J'abandonne</button>
-                        <!-- l'action de supprimer est activée ici -->
-                        <?php echo " <a href=\"supprimer_produit.php?id_produit=" .$row['id_produit']. "\" class=\"btn btn-danger \"><i class=\"fas fa-trash-alt\"></i> </a>"; ?>
-                        </div>
-                    </div>
-                </div>
-                </div>
                 <?php
                 }
                 ?>
