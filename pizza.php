@@ -55,10 +55,11 @@ $nbr_food =  $sql->rowCount();
                 // 
                 echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">';
                 // en bas nous avont le code html de l'accordion plus le bouton
-                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP' . $id_produit . '" style="width:50%">';
+                echo  '<h5 class="float-text text-white">' . $nom_produit. '</h5>';
+                echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionP6" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
-                '<h2 class="accordion-header" id="flush-head-accordionP' . $id_produit . '">';
-                echo ' <button class="accordion-button collapsed btn text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP' . $id_produit . '" aria-expanded="false" aria-controls="flush-accordionP' . $id_produit . '" style="background-color: #0a5846ab; color: #fff">' . $nom_produit . ' ' . $produit_prix . ' €' .
+                echo '<h2 class="accordion-header" id="flush-head-accordionP6">'; 
+                echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionP6" aria-expanded="false" aria-controls="flush-accordionP6" style="background-color: #0a5846ab; color: #fff">' . $produit_prix . ' €' .
                     '</button>';
                 echo ' </h2>';
 
