@@ -1,5 +1,4 @@
-
-<?php     
+<?php
 
 require_once 'inc/init.php';
 require_once 'inc/functions.php';
@@ -8,23 +7,23 @@ require_once 'inc/functions.php';
 //////////////////
 ///
 //ON obtient des data ancien
-// on verify si il ya bien an id selectionner
-if (isset ($_GET['id_categorie'])) {
-    // on prépare une requete. Selectionne les données correspendant à cet categorie ID
+// on verify si il ya bien un id sélectionné
+if (isset($_GET['id_categorie'])) {
+    // on prépare une requête. Selectionne les données correspendant à cette categorie ID
     $requete = $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE id_categorie = :id_categorie");
 
     // On execute la requete
-    $requete->execute(array (
+    $requete->execute(array(
         ':id_categorie' => $_GET['id_categorie'],
     ));
-  
 
-    // count le nombre le données correspendant à cette id
+
+    // count le nombre de données correspendant à cette id
     $nbr_categorie =      $requete->rowCount();
 
     // si le nom de id est supériur à 0
-    
-    if ($nbr_categorie ==1 ) {
+
+    if ($nbr_categorie == 1) {
 
         // On récupère toute les données
         // fetch all rows into array, by default PDO::FETCH_BOTH is used
@@ -37,7 +36,7 @@ if (isset ($_GET['id_categorie'])) {
         //var_dump($result);
     } else {
         // si l'id n'est pas retrouvé on enclanche la session erreur
-        $_SESSION['cat_non_trouver'] = "<div class=\"alert alert-warning row col-4\">Catégorie non trouvé</div>";
+        $_SESSION['cat_non_trouver'] = "<div class=\"alert alert-warning row col-4\">Catégorie non trouvée</div>";
         // On redirect vers la gestdion de categorie
         // c'est une sécurité de plus 
         header('location:' . SITEURL . 'admin/gestion_categorie.php');
@@ -46,8 +45,8 @@ if (isset ($_GET['id_categorie'])) {
     //en redirect vers modifier categorie
     // si on essaye de changer l'id manuellement
     // c'est aussi une sécurité
-    echo " accèss non autorisé";
-   header('location:' . SITEURL . 'admin/modifier_categorie.php');
+    echo " accès non autorisé";
+    header('location:' . SITEURL . 'admin/modifier_categorie.php');
 }
 
 
@@ -59,7 +58,7 @@ if (isset ($_GET['id_categorie'])) {
 if (!empty($_POST)) {
     // 1. Get the value from thw categorie FORM
     $_POST['nom_categorie'] = htmlspecialchars($_POST['nom_categorie']);
-    $_POST['nom_image'] = isset( $_POST['$image_actuelle']);
+    $_POST['nom_image'] = isset($_POST['$image_actuelle']);
     $_POST['en_vedette'] = $_POST['en_vedette'];
     $_POST['disponible'] = $_POST['disponible'];
 
@@ -78,7 +77,7 @@ if (!empty($_POST)) {
                 // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
                 $tmp = explode('.', $nom_image);
                 $file_extension = end($tmp);
-        
+
 
                 // rename the image 
                 $nom_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
@@ -105,11 +104,11 @@ if (!empty($_POST)) {
             }
             // B. REMOVE Current Image if available(NOT empty)
             if ($image_actuelle != '') {
-                $remove_path = "../img/categorie/". $image_actuelle;
+                $remove_path = "../img/categorie/" . $image_actuelle;
                 $remove = unlink($remove_path);
-                
 
-               // var_dump($remove);
+
+                // var_dump($remove);
                 // check whether the image is remove or not
                 // if failed to remove then display error message die()
 
@@ -127,28 +126,28 @@ if (!empty($_POST)) {
         // $nom_image => $image_actuelle;
         $nom_image = $image_actuelle;
     }
-   
-   // jevardump( $remove_path);
+
+    // jevardump( $remove_path);
 
     // 2. Prepare the query to be inserted once the user insert data in the form
     $requete = $pdoSITE->prepare(
-        "UPDATE produit_categorie
-                                                 SET nom_categorie = :nom_categorie, 
-                                                 nom_image = :nom_image,
-                                                 en_vedette = :en_vedette, 
-                                                 disponible = :disponible
-                                                 WHERE id_categorie=:id_categorie"
+        "UPDATE produit_categorie 
+            SET nom_categorie = :nom_categorie, 
+            nom_image = :nom_image,
+            en_vedette = :en_vedette, 
+            disponible = :disponible
+            WHERE id_categorie=:id_categorie"
     );
 
     // 3. Execute the query prepared above then, execute it 
     $requete->execute(
         array(
             // array awaiting to be executed by the prepared sql statement
-            ':nom_categorie'               =>      $_POST['nom_categorie'],
-            ':nom_image'               =>     $_POST['nom_image'],
-            ':en_vedette'                    =>      $_POST['en_vedette'],
-            ':disponible'              =>      $_POST['disponible'],
-            'id_categorie'                         =>  $_GET['id_categorie']
+            ':nom_categorie' => $_POST['nom_categorie'],
+            ':nom_image' => $_POST['nom_image'],
+            ':en_vedette' => $_POST['en_vedette'],
+            ':disponible' => $_POST['disponible'],
+            'id_categorie' => $_GET['id_categorie']
 
         )
     );
@@ -175,19 +174,19 @@ if (!empty($_POST)) {
 ?>
 
 <!-- include header -->
-<?php include_once 'inc/haut.php' ;?>
+<?php include_once 'inc/haut.php'; ?>
 <div class="container m-auto">
-      
-        <?php
-        // if( isset   ($_SESSION['actualiser'])  )   // verify whether the $session is SET or NOT
-        // {
-        //         echo $_SESSION['actualiser']=  " <div class=\"alert alert-wrning row col-col-6\">Admin Data Updated Successfully</div>";// Display the $session message
-        //         session_unset(  ); // remove the $session message
-        // }
 
-        ?>
-        <!-- form -->
-        <div class="row">
+    <?php
+    // if( isset   ($_SESSION['actualiser'])  )   // verify whether the $session is SET or NOT
+    // {
+    //         echo $_SESSION['actualiser']=  " <div class=\"alert alert-wrning row col-col-6\">Admin Data Updated Successfully</div>";// Display the $session message
+    //         session_unset(  ); // remove the $session message
+    // }
+
+    ?>
+    <!-- form -->
+    <div class="row">
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">
@@ -203,15 +202,15 @@ if (!empty($_POST)) {
                     <div class="form-group mb-3">
                         <!-- ancienne image -->
                         <?php
-                if ($image_actuelle !== '') {
-                    // Display it
-                    echo '<img src="' . SITEURL .'img/categorie/'.$image_actuelle. '" width="300px" >';
-                } else {
-                    // Display an error message
-                    echo "<div class=\"alert alert-warning row col-col-4\">Aucune image n'est assignée à cette catégorie </div>";
-                }
+                        if ($image_actuelle !== '') {
+                            // Display it
+                            echo '<img src="' . SITEURL . 'img/categorie/' . $image_actuelle . '" width="300px" >';
+                        } else {
+                            // Display an error message
+                            echo "<div class=\"alert alert-warning row col-col-4\">Aucune image n'est assignée à cette catégorie </div>";
+                        }
 
-                ?>
+                        ?>
                     </div>
 
                     <div class="form-group mb-3">
@@ -230,7 +229,7 @@ if (!empty($_POST)) {
                             <label class="form-check-label" for="f">oui</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input  <?php if ($en_vedette == "non") {
+                            <input <?php if ($en_vedette == "non") {
                                         echo "checked";
                                     } ?>class="form-check-input" type="radio" name="en_vedette" id="en_vedette" value="non">
                             <label class="form-check-label" for="m">non</label>

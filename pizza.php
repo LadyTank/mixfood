@@ -63,9 +63,9 @@ $nbr_food =  $sql->rowCount();
                     '</button>';
                 echo ' </h2>';
 
-                echo   ' <div id="flush-accordionP" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP" data-bs-parent="#accordionP">';
+                echo   ' <div id="flush-accordionP' . $id_produit . '" class="accordion-collapse collapse bg-success" aria-labelledby="flush-head-accordionP' . $id_produit . '" data-bs-parent="#accordionP' . $id_produit . '">';
                 echo '<div class="accordion-body">';
-                echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les incgrédientd
+                echo  ' <p>'  . $produit_ingredients . '</p>'; // on affiche les ingrédients
                 echo            '</div>';
                 echo    ' </div>';
                 echo ' </div>';

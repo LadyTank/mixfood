@@ -117,7 +117,7 @@ require_once 'inc/haut.php';
                 echo    "<tr>";
 
                 ?> 
-                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">// on renomme les id à chaque itération
+                <div class="modal" id="modal_<?php echo $row['id_produit']; ?>">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">

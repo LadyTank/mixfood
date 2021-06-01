@@ -321,19 +321,6 @@ include 'inc/haut.php';
 
 </main>
 
-<!-- Mes scripts !!! -->
-
-<script>
-    let boutonForm = document.querySelector('#cacheImage');
-
-    let formModif = document.querySelector('.cache');
-
-    function cliqueBouton() {
-        formModif.classList.toggle('cache');
-    }
-
-    boutonForm.addEventListener('click', cliqueBouton);
-</script>
 
 
 <?php

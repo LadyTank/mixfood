@@ -6,14 +6,14 @@ $contenu = '';
 // jeprint_r($_POST);
 // Vérification si membre est déjà connecté : 
 if (estConnecte()) { // si membre déjà connecté on le renvoie vers son profil 
-    header('location:profil_client.php'); //redirection vers la page profil.php script que l'on quitte tout de suite
-    exit(); // pour quitter le script header() est une fonction prédéfinie
+    header('location:profil_client.php'); //redirection vers la page profil
+    exit(); // pour quitter le script
 }
 //Traitement du formulaire de connexion
 // jeprint_r($_POST);
 if (!empty($_POST)) { // si le formulaire est envoyé
     // validation du formulaire 
-    if (empty($_POST['email']) || empty($_POST['mot_de_passe'])) { // si le chmap pseudo est vide ou la chmap mdp est vide.
+    if (empty($_POST['email']) || empty($_POST['mot_de_passe'])) {
         $contenu .= '<div class="alert alert-danger">Veuillez fournir vos informations de connexion</div>';
     } /*fin du if !isset pseudo et mdp */
 
@@ -79,8 +79,6 @@ include 'inc/haut.php';
         <a href="../index.php" class="lienVert">Retour sur le site</a>
     </div>
 </main>
-
-<!-- Remove the container if you want to extend the Footer to full width. -->
 
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white container-fluid bg-dark footerC">
