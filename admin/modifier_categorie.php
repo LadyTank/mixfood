@@ -7,7 +7,7 @@ require_once 'inc/functions.php';
 //////////////////
 ///
 //ON obtient des data ancien
-// on verify si il ya bien un id sélectionné
+// on verifie si il ya bien un id sélectionné
 if (isset($_GET['id_categorie'])) {
     // on prépare une requête. Selectionne les données correspendant à cette categorie ID
     $requete = $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE id_categorie = :id_categorie");
