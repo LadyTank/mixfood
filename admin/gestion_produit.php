@@ -6,7 +6,7 @@ require_once 'inc/haut.php';
 
 ?>
 <!-- menu principal -->
-<main class="container">
+<main class="container m-auto my-5 p-2">
     <h1 class="titreChoix text-center">Vos produits</h1>
 
     <div class="container m-auto my-5">
