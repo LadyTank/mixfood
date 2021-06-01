@@ -82,7 +82,7 @@
 
     <!-- Copyright -->
     <div class="text-center">
-        <p class="text-end mx-3 text-muted"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+        <p class="text-end mx-3 text-muted" id="pfooter"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>

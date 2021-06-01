@@ -247,7 +247,7 @@ include 'inc/haut.php';
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                     <li><a class="dropdown-item liVert" href="ajouter_produit.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="gestion_produit.php">Modifier /Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier /Supprimer</a></li>
                 </ul>
             </div>
             <div class="col-md-6 mb-23">
