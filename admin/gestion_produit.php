@@ -96,12 +96,13 @@ require_once 'inc/haut.php';
                     // ici on fait on modal situé plus bas
                     // cette modal ajoute un averstissement de plus
                     // cette une fonctionnalité de sécurité utilse
-                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td><tr>";
+                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal_".$row['id_produit']. "\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td><tr>";
 
                     // on bas c'est le modal 
                     // affiche un message important
+                    // on change le l'id du modal on y rajoutons l'id de chaque produit
                     ?>
-                    <div class="modal" id="modal">
+                    <div class="modal" id="modal_<?php echo $row['id_produit']  ?>">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
