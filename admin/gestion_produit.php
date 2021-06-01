@@ -14,7 +14,7 @@ require_once 'inc/haut.php';
         <!-- button to ad admin  -->
         <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter produit</a>
 
-        <table class="table table-striped mx-auto table-success">
+        <table class="table table-striped mx-auto table-success table-responsive">
             <thead class="table-success">
                 <tr>
                     <!-- <th scope="col">ID</th> -->
@@ -96,7 +96,7 @@ require_once 'inc/haut.php';
                     // ici on fait on modal situé plus bas
                     // cette modal ajoute un averstissement de plus
                     // cette une fonctionnalité de sécurité utilse
-                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal_".$row['id_produit']. "\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td><tr>";
+                    echo "<td> <a data-bs-toggle=\"modal\" href=\"#modal_" . $row['id_produit'] . "\" class=\" btn btn-danger\"><i class=\" fas fa-trash-alt\"></i></a></td><tr>";
 
                     // on bas c'est le modal 
                     // affiche un message important

@@ -84,7 +84,7 @@ include 'inc/haut.php';
 <main class="container mx-auto ">
     <div class="row">
         <div class="col-sm-12 mx-auto ">
-            <h1 class="text-center titreChoix text-white">MIXFOOD Inscrivez-vous !!!</h1>
+            <h1 class="text-center titreChoix text-white">Nouvel utilisateur</h1>
         </div><!-- Fin de col -->
     </div><!-- Fin row -->
 
