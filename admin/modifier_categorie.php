@@ -187,24 +187,19 @@ if (!empty($_POST)) {
     ?>
     <!-- form -->
     <div class="row">
-        <div class="col-sm-12 col-md-6 mx-auto p-4">
+        <div class="col-sm-12 col-md-6 mx-auto p-4 m-5">
 
-            <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Modifier la catégorie</h2>
+            <div class="card  alert alert-success border border-success">
+                <h2 class="bg-succes p-4 text-center ">Modifier la catégorie</h2>
                 <!-- début de formulaire -->
-                <form method="POST" action="" enctype="multipart/form-data" class="">
+                <form method="POST" action="" enctype="multipart/form-data" class="form-group p-4 m-auto ">
 
-                    <div class="form-group mb-3">
-                        <label for="nom_categorie"> Nom catégorie</label>
-                        <input type="text " class="form-control text-right" name="nom_categorie" value="<?php echo $nom_categorie; ?> " id="nom_categorie">
-                    </div>
-
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-3 text-center m-auto">
                         <!-- ancienne image -->
                         <?php
                         if ($image_actuelle !== '') {
                             // Display it
-                            echo '<img src="' . SITEURL . 'img/categorie/' . $image_actuelle . '" width="300px" >';
+                            echo '<img src="' . SITEURL . 'img/categorie/' . $image_actuelle . '" width="300" class="img-curvy img-fluid">';
                         } else {
                             // Display an error message
                             echo "<div class=\"alert alert-warning row col-col-4\">Aucune image n'est assignée à cette catégorie </div>";
@@ -213,46 +208,54 @@ if (!empty($_POST)) {
                         ?>
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="nom_image">Choisissez une nouvelle image</label>
-                        <input type="file" class="form-control text-right" name="nom_image" id="nom_image">
+                    <div class="list-group list-group-horizontal-lg list-group-horizontal-md my-2">
+                        <label for="nom_categorie" class="form-label  mt-3 "> Nom catégorie</label>
+                        <input type="text " class="form-control mx-5 list-group-item " name="nom_categorie" value="<?php echo $nom_categorie; ?> " id="nom_categorie">
+                    </div>
+
+
+                    <div class="form-group my-3">
+                        <label for="nom_image" class="form-label">Choisissez une nouvelle image</label>
+                        <input type="file" class="form-control" name="nom_image" id="nom_image">
                         <!-- <input type="file" id="nom_image" name="nom_image"> -->
                     </div>
 
 
-                    <div class="form-group mb-3">
-                        <label for="en_vedette">En vedette </label>
-                        <div class="form-check form-check-inline">
+                    <div class="form-group mt-3">
+                        <label for="en_vedette" class="form-label">En vedette </label>
+                        <div class="form-check form-check-inline  m-2">
                             <input <?php if ($en_vedette == "oui") {
                                         echo "checked";
                                     } ?> class="form-check-input" type="radio" name="en_vedette" id="en_vedette" value="oui">
                             <label class="form-check-label" for="f">oui</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline  m-2">
                             <input <?php if ($en_vedette == "non") {
                                         echo "checked";
                                     } ?>class="form-check-input" type="radio" name="en_vedette" id="en_vedette" value="non">
-                            <label class="form-check-label" for="m">non</label>
+                            <label class="form-check-label form-label" for="m">non</label>
                         </div>
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="disponible">Disponibilité </label>
-                        <div class="form-check form-check-inline">
+                    <div class="form-group ">
+                        <label for="disponible">Disponible </label>
+                        <div class="form-check form-check-inline m-1">
                             <input <?php if ($disponible == "oui") {
                                         echo "checked";
                                     } ?> class="form-check-input" type="radio" name="disponible" id="disponible" value="oui">
-                            <label class="form-check-label" for="disponible">oui</label>
+                            <label class="form-check-label" for="disponible" class="form-label">oui</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline m-1">
                             <input <?php if ($disponible == "non") {
                                         echo "checked";
                                     } ?> class="form-check-input" type="radio" name="disponible" id="disponible" value="non">
-                            <label class="form-check-label" for="disponible">non</label>
+                            <label class="form-check-label" for="disponible" class="form-label">non</label>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-small btn-warning">AJOUTER</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-small btn-success espace m-4">MODIFIER</button>
+                    </div>
 
                 </form> <!-- fin de formulaire -->
             </div><!-- Fin de card -->

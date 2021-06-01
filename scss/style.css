@@ -32,6 +32,9 @@ p, h1 {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: grey;
+  background-image: url(../img/logoBlanc.png);
+  background-repeat: repeat-y;
+  background-attachment: fixed;
 }
 
 .navbar-custom {
@@ -118,6 +121,11 @@ a.liVert:active {
 
 footer {
   min-height: 230px;
+  margin-bottom: 0 !important;
+}
+
+#pfooter {
+  margin-bottom: 0 !important;
 }
 
 .footerC {
@@ -233,5 +241,9 @@ footer .icon-fb {
 
 .alignRight {
   float: right;
+}
+
+#coin {
+  border-radius: 20px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -57,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="container col-sm-11 col-md-6 col-lg-3  navbar-collapse collapse ">
+            <div class="container col-sm-11 col-md-6 col-lg-3  navbar-collapse collapse justify-content-center">
                 <?php
 
                 if (estConnecte()) { // si membre utilisateur connecté
