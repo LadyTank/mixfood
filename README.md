@@ -17,3 +17,5 @@ PHP
 ### voir pour estomper le logo du background image 
 ### enlever l'image du background en mobile
 ### adapter le responsive tablette
+
+coucou baroude
