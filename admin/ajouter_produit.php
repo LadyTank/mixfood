@@ -128,7 +128,7 @@ require_once 'inc/haut.php';
                     <div class="form-group mb-3">
                         <label for="produit_vedette">Produit vedette </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
+                            <input class="form-check-input" type="radio"  name="produit_vedette" id="produit_vedette" value="oui">
                             <label class="form-check-label" for="f">oui</label>
                         </div>
                         <div class="form-check form-check-inline">
