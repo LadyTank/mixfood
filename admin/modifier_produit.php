@@ -1,196 +1,23 @@
-
-<?php     
+<?php
 
 require_once 'inc/init.php';
 require_once 'inc/functions.php';
-
-
-//////////////////
-///
-//ON obtient des data ancien
-// on verify si il ya bien an id selectionner
-if (isset ($_GET['id'])) {
-    // on prépare une requete. Selectionne les données correspendant à cet categorie ID
-    $requete = $pdoSITE->prepare("SELECT * FROM produit WHERE id_produit = :id");
-
-    // On execute la requete
-    $requete->execute(array (
-        ':id' => $_GET['id'],
-    ));
-  
-
-    // count le nombre le données correspendant à cette id
-    $nbr_produit =      $requete->rowCount();
-
-    // si le nom de id est supériur à 0
-    
-    if ($nbr_produit > 0) {
-
-        // On récupère toute les données
-        // fetch all rows into array, by default PDO::FETCH_BOTH is used
-        $result     =   $requete->fetch(PDO::FETCH_ASSOC);
-        $nom_categorie      =   $result['nom_categorie'];
-        $image_actuelle =   $result['nom_image'];
-        $en_vedette  =   $result['en_vedette'];
-        $disponible     =   $result['disponible'];
-
-        //var_dump($result);
-    } else {
-        // si l'id n'est pas retrouvé on enclanche la session erreur
-        $_SESSION['cat_non_trouver'] = "<div class=\"alert alert-warning row col-4\">Catégorie non trouvé</div>";
-        // On redirect vers la gestdion de categorie
-        // c'est une sécurité de plus 
-        header('location:' . SITEURL . 'admin/gestion_categorie.php');
-    }
-} else {
-    //en redirect vers modifier categorie
-    // si on essaye de changer l'id manuellement
-    // c'est aussi une sécurité
-    echo " accèss non autorisé";
-   header('location:' . SITEURL . 'admin/modifier_categorie.php');
-}
-
-
-
-//////////////////
-///
-//TRAITEMENT DES NOUVELLES DONNES
-
-if (!empty($_POST)) {
-    // 1. Get the value from thw categorie FORM
-    $_POST['nom_categorie'] = htmlspecialchars($_POST['nom_categorie']);
-    $_POST['nom_image'] = isset( $_POST['$image_actuelle']);
-    $_POST['en_vedette'] = $_POST['en_vedette'];
-    $_POST['disponible'] = $_POST['disponible'];
-
-
-    // On met à jour la nouvelle image
-    if ($_FILES['nom_image']['name']) {
-        // get image details
-        $nom_image = $_FILES['nom_image']['name'];
-
-        // verify whether the image is avalaible or not
-        if ($nom_image != '') {
-
-            if ($nom_image != '') { // start of i image is not empty
-
-                // auto rename OUR image
-                // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
-                $tmp = explode('.', $nom_image);
-                $file_extension = end($tmp);
-        
-
-                // rename the image 
-                $nom_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
-
-                $source_path = $_FILES['nom_image']['tmp_name']; // source path
-                //var_dump($source_path);
-                $destination_path = "../img/categorie/" . $nom_image; // destination path
-
-                // Now we can Upload the file
-                $upload = move_uploaded_file($source_path, $destination_path);
-
-                // Check whether the image is uploaded or not
-                // And if the image failed to ulpload, stop then redirect to error message
-                if ($upload == false) {
-                    // SET message
-                    $_SESSION['telecharger'] = "<div class=\"alert alert-danger\">Image n'as pu être téléversée</div>";
-                    // redirect to add Category page
-                    header('location:' . SITEURL . 'Admin/add_category.php');
-
-                    die(); // STOP 
-                }
-
-                //var_dump($destination_path);
-            }
-            // B. REMOVE Current Image if available(NOT empty)
-            if ($image_actuelle != '') {
-                $remove_path = "../img/categorie/". $image_actuelle;
-                $remove = unlink($remove_path);
-
-                var_dump($remove);
-                // check whether the image is remove or not
-                // if failed to remove then display error message die()
-
-                // if ($remove == false) {
-                //     $_SESSION['erreur-telechargement'] = "<div class=\"alert alert-danger\"> Failed to update new the image </div>";
-                //     header('location:' . SITEURL . 'Admin/gestion_categorie.php');
-
-                //     die(); // STOP 
-                // }
-            }
-        } else { // if an image is NOT selected; $nom_image => $image_actuelle;
-            $nom_image = $image_actuelle;
-        }
-    } else {
-        // $nom_image => $image_actuelle;
-        $nom_image = $image_actuelle;
-    }
-   
-    jevardump( $remove_path);
-
-    // 2. Prepare the query to be inserted once the user insert data in the form
-    $requete = $pdoSITE->prepare(
-        "UPDATE produit_categorie
-                                                 SET nom_categorie = :nom_categorie, 
-                                                 nom_image = :nom_image,
-                                                 en_vedette = :en_vedette, 
-                                                 disponible = :disponible
-                                                 WHERE id_categorie=:id"
-    );
-
-    // 3. Execute the query prepared above then, execute it 
-    $requete->execute(
-        array(
-            // array awaiting to be executed by the prepared sql statement
-            ':nom_categorie'               =>      $_POST['nom_categorie'],
-            ':nom_image'               =>     $_POST['nom_image'],
-            ':en_vedette'                    =>      $_POST['en_vedette'],
-            ':disponible'              =>      $_POST['disponible'],
-            'id'                         =>  $_GET['id']
-
-        )
-    );
-
-
-
-    //Redirect vers la page gestion categorie
-    // si la requete est sql est réussite
-    // if ($requete == TRUE) {
-    //     // on active la session si la bdd est mise à jour avec toutes les nouvelles données 
-    //     $_SESSION['actualiser'] = "<div class=\"alert alert-success row col-col-2\">Information bien actualiser</div>";
-    //     header('location:' . SITEURL . 'admin/gestion_categorie.php');
-
-    //     // $$requete->fetch(PDO::FETCH_ASSOC);
-    // } else {
-    //     // failed to update 
-    //     $_SESSION['actualiser'] = "<div class=\"alert alert-warning row col-col-2\">L'actualisation à échouer</div>";
-    //     header('location:' . SITEURL . 'admin/modifier_categorie.php');
-    // }
-}
 
 
 
 ?>
 
 <!-- include header -->
-<?php include_once 'inc/haut.php' ;?>
+<?php include_once 'inc/haut.php'; ?>
 <div class="container m-auto">
-      
-        <?php
-        // if( isset   ($_SESSION['actualiser'])  )   // verify whether the $session is SET or NOT
-        // {
-        //         echo $_SESSION['actualiser']=  " <div class=\"alert alert-wrning row col-col-6\">Admin Data Updated Successfully</div>";// Display the $session message
-        //         session_unset(  ); // remove the $session message
-        // }
 
-        ?>
-        <!-- form -->
-        <div class="row"><!-- début row -->
+    <!-- form -->
+    <div class="row">
+        <!-- début row -->
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Entréz votre produit</h2>
+                <h2 class="bg-warning p-4 text-center mb-5">Modification produit</h2>
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="">
 
@@ -227,7 +54,6 @@ if (!empty($_POST)) {
                             <label class="form-check-label" for="m">non</label>
                         </div>
                     </div>
-
 
 
                     <div class="form-group mb-3">
