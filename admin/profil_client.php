@@ -222,35 +222,23 @@ include 'inc/haut.php';
         if (estAdmin()) {
             echo '
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-            <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class= col-md-6 mt-5">
+                <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php" >
                     Utilisateur
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item liVert" href="#">Ajouter ADMIN en cours</a></li>
-                </ul>
+                </a>
             </div>
-            <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class=" col-md-6 mt-5">
+                <a type="button" class="btn btn-success btn-profil" type="button" id="buttonC" href="gestion_categorie.php">
                     Catégorie
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item liVert" href="ajouter_categorie.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="gestion_categorie.php">Modifier / Supprimer</a></li>
-                </ul>
+                </a>
             </div>
             <h2 class="text-center text-white mb-4 espace"> Actions </h2>
-
-            <div class="dropdown col-md-6 mb-3">
-                <button class="btn btn-success dropdown-toggle btn-profil" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="col-md-6 mb-5">
+                <a class="btn btn-success btn-profil" type="button" id="boutonP" href="gestion_produit.php">
                     Produit
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                    <li><a class="dropdown-item liVert" href="ajouter_produit.php">Ajouter</a></li>
-                    <li><a class="dropdown-item liVert" href="gestion_produit.php">Modifier /Supprimer</a></li>
-                </ul>
+                </a>
             </div>
-            <div class="col-md-6 mb-23">
+            <div class="col-md-6 mb-5">
                 <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Commande</a>
             </div>
         </div>';

@@ -1,5 +1,4 @@
-
-<?php     
+<?php
 
 require_once 'inc/init.php';
 require_once 'inc/functions.php';
@@ -170,19 +169,12 @@ if (!empty($_POST)) {
 ?>
 
 <!-- include header -->
-<?php include_once 'inc/haut.php' ;?>
+<?php include_once 'inc/haut.php'; ?>
 <div class="container m-auto">
-      
-        <?php
-        // if( isset   ($_SESSION['actualiser'])  )   // verify whether the $session is SET or NOT
-        // {
-        //         echo $_SESSION['actualiser']=  " <div class=\"alert alert-wrning row col-col-6\">Admin Data Updated Successfully</div>";// Display the $session message
-        //         session_unset(  ); // remove the $session message
-        // }
 
-        ?>
-        <!-- form -->
-        <div class="row"><!-- début row -->
+    <!-- form -->
+    <div class="row">
+        <!-- début row -->
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">
@@ -249,7 +241,6 @@ if (!empty($_POST)) {
                             <label class="form-check-label" for="m">non</label>
                         </div>
                     </div>
-
 
 
                     <div class="form-group mb-3">
