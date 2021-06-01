@@ -23,7 +23,7 @@ if (isset($_GET['id_categorie'])) {
 
     // si le nom de id est supériur à 0
 
-    if ($nbr_categorie == 1) {
+    if ($nbr_categorie >= 1) {
 
         // On récupère toute les données
         // fetch all rows into array, by default PDO::FETCH_BOTH is used
@@ -50,7 +50,6 @@ if (isset($_GET['id_categorie'])) {
 }
 
 
-
 //////////////////
 ///
 //TRAITEMENT DES NOUVELLES DONNES
@@ -58,7 +57,7 @@ if (isset($_GET['id_categorie'])) {
 if (!empty($_POST)) {
     // 1. Get the value from thw categorie FORM
     $_POST['nom_categorie'] = htmlspecialchars($_POST['nom_categorie']);
-    $_POST['nom_image'] = isset($_POST['$image_actuelle']);
+    // $_POST['nom_image'] = empty($image_actuelle);
     $_POST['en_vedette'] = $_POST['en_vedette'];
     $_POST['disponible'] = $_POST['disponible'];
 
