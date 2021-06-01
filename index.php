@@ -83,17 +83,15 @@ include 'inc/diaporama.php';
 
 </div><!-- /fin container-->
 
-<!-- INTRODUIRE LES PROMOTIONS ICI ???-->
-
 <div class="container mx-auto circleC d-none d-lg-block d-md-block">
 
     <div class=""><img src="img/chefC.jpg" alt="" class="alignRight img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
 
     <h1 class="titreChoix p-4 text-left espace">À propos de nous ...</h1>
-    <p class="typoChoix text-justify p-4 m-4 espace">Tous nos produits sont frais. Régionaux quand c'est possible.
+    <p class="typoChoix text-justify p-4 m-4 espace">Bonjour je m'apelle Massimo zanoti, originaire de Naples en Italie.
+        Tous nos produits sont frais.
         Après un voyage au Japon de 3 ans, je me suis dirigé de nouveau en France pour faire vivre cette nouvelle passion culinaire, et faire partager le savoir avec d'autres chef en France.
     </p>
-
 
 </div>
 
