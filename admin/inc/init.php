@@ -15,16 +15,6 @@ $pdoSITE  = new PDO("mysql:host=LOCALHOST; dbname=MIXFOOD", DB_USERNAME, DB_PASS
 $pdoSITE->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-// $pdoSITE = new PDO(
-//     'mysql:host=localhost;dbname=mixfood',
-//     'root',
-//     '',
-//     array(
-//         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-//         PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-//     )
-// );
-
 // ///////// OUVERTURE DE SESSION ///////// //
 session_start();
 
