@@ -1,5 +1,5 @@
 <?php
-include 'inc/init.php';
+include 'inc/initOn.php';
 $sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie  WHERE disponible='oui' AND en_vedette ='oui' ");
 
 $sql->execute();
