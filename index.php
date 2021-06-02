@@ -21,8 +21,10 @@ include 'inc/diaporama.php';
 
 <!-- /container principal -->
 <div class="container mx-auto">
-    <h2 class="text-center mt-5 text-light titreChoix d-none d-md-block d-lg-block"> Pourquoi choisir ?</h2>
-    <h2 class="text-center mt-5 text-light titreChoix  d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
+    <div class="container">
+        <h2 class="text-center mt-5 text-light titreChoix d-none d-md-block d-lg-block py-5"> Pourquoi choisir ?</h2>
+        <h2 class="text-center mt-5 text-light titreChoix  d-sm-block d-md-none d-lg-none"> Sélectionner</h2>
+    </div>
 
     <?php
 

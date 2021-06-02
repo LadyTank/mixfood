@@ -53,7 +53,7 @@ if (!empty($_POST)) {
         $produit_image = "";
     }
     // 2. On prepare la requête sql . Les données seront persister des que le bouton submit est activé
-    $sql1 = $pdoSITE->prepare("INSERT INTO produit SET  id_categorie='$id_categorie', nom_produit ='$nom_produit', produit_image ='$produit_image',  produit_ingredients='$produit_ingredients',produit_prix='$produit_prix', produit_vedette='$produit_vedette',produit_disponible ='$produit_disponible' ");
+    $sql1 = $pdoSITE->prepare("INSERT INTO produit SET id_categorie='$id_categorie', nom_produit ='$nom_produit', produit_image ='$produit_image', produit_ingredients='$produit_ingredients',produit_prix='$produit_prix', produit_vedette='$produit_vedette',produit_disponible ='$produit_disponible' ");
     //var_dump( $sql1);
     // On execute la requête
     $requete = $sql1->execute();
@@ -77,23 +77,23 @@ require_once 'inc/haut.php';
         <!-- début row -->
         <div class="col-sm-12 col-md-6 m-auto my-5 p-5">
             <div class="card m-auto alert alert-success p-5">
-                <h2 class="bg-light p-4 text-center mb-5">Nouveau produit</h2>
+                <h2 class="alert-success p-4 text-center mb-5">Nouveau produit</h2>
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="">
                     <div class="form-group mb-3">
-                        <label for="nom_produit"> Nom du produit</label>
+                        <label for="nom_produit" class=" form-label"> Nom du produit</label>
                         <input type="text " class="form-control text-right" name="nom_produit" id="nom_produit">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="produit_prix">Prix</label>
+                        <label for="produit_prix" class=" form-label">Prix</label>
                         <input type="text " class="form-control text-right" name="produit_prix" id="produit_prix">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="produit_image">Choisir une image</label>
+                        <label for="produit_image" class=" form-label">Choisir une image</label>
                         <input type="file" class="form-control text-right" name="produit_image" id="produit_image">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="produit_categorie" class="bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i>Quelle est sa catégorie ?</label>
+                        <label for="produit_categorie" class=" form-label">Quelle est sa catégorie ?</label>
                         <select class="form-select form-select-sm" name="categorie" id="categorie" aria-label="choix categorie">
                             <option value="">....</option>';
                             <?php
@@ -128,7 +128,7 @@ require_once 'inc/haut.php';
                     <div class="form-group mb-3">
                         <label for="produit_vedette">Produit vedette </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio"  name="produit_vedette" id="produit_vedette" value="oui">
+                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
                             <label class="form-check-label" for="f">oui</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -147,7 +147,9 @@ require_once 'inc/haut.php';
                             <label class="form-check-label" for="m">non</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-small btn-warning">AJOUTER</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-small btn-success espace m-4">AJOUTER</button>
+                    </div>
                 </form> <!-- fin de formulaire -->
             </div><!-- Fin de card -->
         </div><!-- Fin de col -->

@@ -1,9 +1,3 @@
-<?php
-// gestion de la newsletter
-
-
-?>
-
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white container-fluid bg-dark">
     <!-- Grid container -->
@@ -14,7 +8,7 @@
             <div class="row">
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 d-none d-md-block d-lg-block ">
-                    <h6><img src="img/logoBlanc.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center " width="35%" height="35%"></h6>
+                    <h6><img src="img/logoBlanc.png" alt="logo-mixfood" class="img-fluid mixfooter align-center " width="35%" height="35%"></h6>
                 </div>
                 <!-- Grid column -->
 
@@ -56,11 +50,11 @@
                         <div class="subcribe-form fl-wrap">
                             <p class="vert">Newsletter </p>
                             <form id="subscribe" novalidate="true">
-                                <input class="emailNews" name="email_news" id="email_news" placeholder="Votre email" spellcheck="false" type="text">
+                                <input class="emailNews form-control" name="email_news" id="email_news" placeholder="Votre email" spellcheck="false" type="text">
 
-                                <i class="fa fa-rss btn btn-success subscribe-button" type="submit" id="subscribe-button"> GO</i>
+                                <i class="fa fa-rss btn btn-success subscribe-button form-control" type="submit" id="subscribe-button"> GO</i>
 
-                                <label for="subscribe-email" class="subscribe-message"></label>
+                                <label for="subscribe-email" class="subscribe-message form-label"></label>
                             </form>
                         </div>
                     </div>
@@ -82,12 +76,11 @@
 
     <!-- Copyright -->
     <div class="text-center">
-        <p class="text-end mx-3 text-muted" id="pfooter"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+        <p class="text-end mx-3 text-muted text-small" id="pfooter"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

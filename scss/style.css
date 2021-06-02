@@ -31,7 +31,7 @@ p, h1 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(128, 128, 128, 0.733);
+  background-color: #5a5656;
   background-image: url(../img/logoBlanc_transparant.png);
   background-size: 150px;
   background-repeat: repeat-y;
@@ -129,8 +129,12 @@ footer {
   margin-bottom: 0 !important;
 }
 
+.typoF {
+  font-size: 1em;
+}
+
 .footerC {
-  min-height: 300px;
+  min-height: 200px;
   position: -webkit-sticky;
   position: sticky;
 }
@@ -238,6 +242,10 @@ footer .icon-fb {
 .circle {
   width: 500px;
   height: 400px;
+}
+
+.clear {
+  clear: both;
 }
 
 .alignRight {

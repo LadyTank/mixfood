@@ -8,6 +8,7 @@ require_once 'inc/haut.php';
 ?>
 <!-- menu principal -->
 <div class="container m-auto my-5 p-2">
+    <h1 class="titreChoix text-center">Vos catégories</h1>
     <?php
     // on active la session de suppression de category
     if (isset($_SESSION['supprimer'])) {

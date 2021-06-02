@@ -3,30 +3,17 @@
 require_once 'inc/init.php';
 require_once 'inc/functions.php';
 
-
-//////////////////
-///
-//ON obtient des data ancien
 // on verifie si il ya bien un id sélectionné
 if (isset($_GET['id_categorie'])) {
-    // on prépare une requête. Selectionne les données correspendant à cette categorie ID
     $requete = $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE id_categorie = :id_categorie");
-
-    // On execute la requete
     $requete->execute(array(
         ':id_categorie' => $_GET['id_categorie'],
     ));
 
-
-    // count le nombre de données correspendant à cette id
     $nbr_categorie =      $requete->rowCount();
-
-    // si le nom de id est supériur à 0
 
     if ($nbr_categorie >= 1) {
 
-        // On récupère toute les données
-        // fetch all rows into array, by default PDO::FETCH_BOTH is used
         $result     =   $requete->fetch(PDO::FETCH_ASSOC);
         $nom_categorie      =   $result['nom_categorie'];
         $image_actuelle =   $result['nom_image'];
@@ -35,36 +22,27 @@ if (isset($_GET['id_categorie'])) {
 
         //var_dump($result);
     } else {
-        // si l'id n'est pas retrouvé on enclanche la session erreur
         $_SESSION['cat_non_trouver'] = "<div class=\"alert alert-warning row col-4\">Catégorie non trouvée</div>";
-        // On redirect vers la gestdion de categorie
-        // c'est une sécurité de plus 
         header('location:' . SITEURL . 'admin/gestion_categorie.php');
     }
 } else {
-    //en redirect vers modifier categorie
-    // si on essaye de changer l'id manuellement
-    // c'est aussi une sécurité
+    //redirection de sécurité
     echo " accès non autorisé";
     header('location:' . SITEURL . 'admin/modifier_categorie.php');
 }
-
 
 //////////////////
 ///
 //TRAITEMENT DES NOUVELLES DONNES
 
 if (!empty($_POST)) {
-    // 1. Get the value from thw categorie FORM
     $_POST['nom_categorie'] = htmlspecialchars($_POST['nom_categorie']);
     // $_POST['nom_image'] = empty($image_actuelle);
     $_POST['en_vedette'] = $_POST['en_vedette'];
     $_POST['disponible'] = $_POST['disponible'];
 
-
     // On met à jour la nouvelle image
     if ($_FILES['nom_image']['name']) {
-        // get image details
         $nom_image = $_FILES['nom_image']['name'];
 
         // verify whether the image is avalaible or not
@@ -77,17 +55,13 @@ if (!empty($_POST)) {
                 $tmp = explode('.', $nom_image);
                 $file_extension = end($tmp);
 
-
                 // rename the image 
                 $nom_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
-
                 $source_path = $_FILES['nom_image']['tmp_name']; // source path
                 //var_dump($source_path);
                 $destination_path = "../img/categorie/" . $nom_image; // destination path
-
                 // Now we can Upload the file
                 $upload = move_uploaded_file($source_path, $destination_path);
-
                 // Check whether the image is uploaded or not
                 // And if the image failed to ulpload, stop then redirect to error message
                 if ($upload == false) {
@@ -151,8 +125,6 @@ if (!empty($_POST)) {
         )
     );
 
-
-
     //Redirect vers la page gestion categorie
     // si la requete est sql est réussite
     // if ($requete == TRUE) {
@@ -168,10 +140,7 @@ if (!empty($_POST)) {
     // }
 }
 
-
-
 ?>
-
 <!-- include header -->
 <?php include_once 'inc/haut.php'; ?>
 <div class="container m-auto">
@@ -190,35 +159,35 @@ if (!empty($_POST)) {
 
             <div class="card  alert alert-success border border-success">
                 <h2 class="bg-succes p-4 text-center ">Modifier la catégorie</h2>
+
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="form-group p-4 m-auto ">
 
                     <div class="form-group mb-3 text-center m-auto">
-                        <!-- ancienne image -->
-                        <?php
-                        if ($image_actuelle !== '') {
-                            // Display it
-                            echo '<img src="' . SITEURL . 'img/categorie/' . $image_actuelle . '" width="300" class="img-curvy img-fluid">';
-                        } else {
-                            // Display an error message
-                            echo "<div class=\"alert alert-warning row col-col-4\">Aucune image n'est assignée à cette catégorie </div>";
-                        }
-
-                        ?>
+                        <p class="">
+                            <!-- ancienne image -->
+                            <?php
+                            if ($image_actuelle !== '') {
+                                // Display it
+                                echo '<img src="' . SITEURL . 'img/categorie/' . $image_actuelle . '" width="300" class="img-curvy img-fluid">';
+                            } else {
+                                // Display an error message
+                                echo "<div class=\"alert alert-warning row col-col-4\">Aucune image n'est assignée à cette catégorie </div>";
+                            }
+                            ?>
+                        </p>
                     </div>
 
                     <div class="list-group list-group-horizontal-lg list-group-horizontal-md my-2">
-                        <label for="nom_categorie" class="form-label  mt-3 "> Nom catégorie</label>
+                        <label for="nom_categorie" class="form-label mt-3 "> Nom catégorie</label>
                         <input type="text " class="form-control mx-5 list-group-item " name="nom_categorie" value="<?php echo $nom_categorie; ?> " id="nom_categorie">
                     </div>
-
 
                     <div class="form-group my-3">
                         <label for="nom_image" class="form-label">Choisissez une nouvelle image</label>
                         <input type="file" class="form-control" name="nom_image" id="nom_image">
                         <!-- <input type="file" id="nom_image" name="nom_image"> -->
                     </div>
-
 
                     <div class="form-group mt-3">
                         <label for="en_vedette" class="form-label">En vedette </label>
@@ -263,7 +232,6 @@ if (!empty($_POST)) {
     </div><!-- Fin row -->
 
 </div><!-- / menu-princpal -->
-
 
 <!-- include the footer -->
 <?php include_once 'inc/bas.php'; ?>

@@ -56,11 +56,11 @@
                         <div class="subcribe-form fl-wrap">
                             <p class="vert">Newsletter </p>
                             <form id="subscribe" novalidate="true">
-                                <input class="emailNews" name="email_news" id="email_news" placeholder="Votre email" spellcheck="false" type="text">
+                                <input class="emailNews form-control" name="email_news" id="email_news" placeholder="Votre email" spellcheck="false" type="text">
 
-                                <i class="fa fa-rss btn btn-success subscribe-button" type="submit" id="subscribe-button"> GO</i>
+                                <i class="fa fa-rss btn btn-success subscribe-button form-control" type="submit" id="subscribe-button"> GO</i>
 
-                                <label for="subscribe-email" class="subscribe-message"></label>
+                                <label for="subscribe-email" class="subscribe-message form-label"></label>
                             </form>
                         </div>
                     </div>
