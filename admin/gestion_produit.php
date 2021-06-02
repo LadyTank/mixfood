@@ -14,6 +14,21 @@ require_once 'inc/haut.php';
         <!-- button to ad admin  -->
         <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter produit</a>
 
+        <?php 
+        if(isset($_SESSION['prod_actualiser'])){
+            echo $_SESSION['prod_actualiser'];
+            unset($_SESSION['prod_actualiser']);
+
+        }
+
+        if(isset($_SESSION['erreur _actualisation'])){
+            echo $_SESSION['erreur _actualisation'];
+            unset($_SESSION['erreur _actualisation']);
+        }
+        
+        
+        ?>
+
         <table class="table table-striped mx-auto table-success table-responsive">
             <thead class="table-success">
                 <tr>
