@@ -12,7 +12,9 @@ require_once 'inc/haut.php';
     <div class="container m-auto my-5">
 
         <!-- button to ad admin  -->
-        <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter produit</a>
+        <div class="col">
+            <a href="<?php echo SITEURL; ?>admin/ajouter_produit.php" class="btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter produit</a>
+        </div>
 
         <?php 
         if(isset($_SESSION['prod_actualiser'])){
@@ -91,7 +93,7 @@ require_once 'inc/haut.php';
 
                         if ($produit_image  != '') {
                         ?>
-                            <img class="img-fluid" src="<?php echo SITEURL; ?>img/produit/<?php echo $produit_image; ?>">
+                            <img class="img-fluid w-50" src="<?php echo SITEURL; ?>img/produit/<?php echo $produit_image; ?>">
 
                         <?php
 

@@ -5,7 +5,7 @@ $success: #157347;
 $vertC: #24aa6b;
 $noir: #000;
 $jaune: #ffbb00;
-$gris: grey;
+$gris: rgb(90, 86, 86);
 
 .vert {
     color: $success;
@@ -35,7 +35,6 @@ p, h1 {
 }
 
 
-
 // typographie écriture manuscrite
 .titreChoix {
     font-family: 'Give You Glory', cursive;
@@ -55,6 +54,7 @@ body {
     font-family: 'Roboto', sans-serif; 
     background-color: $gris;
     background-image: url(../img/logoBlanc_transparant.png);
+    background-size: 150px;
     background-repeat: repeat-y;
     background-attachment: fixed;
     
@@ -150,7 +150,7 @@ a.liVert:active {
 // footer
 
 footer {
-    min-height:230px;
+    min-height:130px;
     margin-bottom: 0 !important;
 }
 
@@ -267,6 +267,10 @@ footer .icon-fb {
     height: 400px;
 }
 
+.clear {
+    clear: both;
+}
+
 .alignRight {
     float: right;
 }
@@ -275,4 +279,8 @@ footer .icon-fb {
 
 #coin {
     border-radius : 20px;
+}
+
+.photoD {
+    background-color: rgba(251, 251, 251, 0.2);
 }

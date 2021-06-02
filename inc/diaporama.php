@@ -1,3 +1,5 @@
+<!-- diaporama accueil -->
+
 <div id="carouselAccueil" class="carousel slide carousel-fade bg-dark d-none d-sm-none d-lg-block d-md-block" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselAccueil" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -5,10 +7,10 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active ">
-            <img src="img/pizzaH.jpg" class="d-block w-100 h-50 img-carrousel" alt="pizza succulente">
+            <img src="img/pizzaH.jpg" class="d-block w-100 h-50 img-carrousel photoD" alt="pizza succulente">
         </div>
         <div class="carousel-item">
-            <img src="img/sushi2H.jpg" class="d-block w-100 h-50 img-carrousel" alt="sushi alléchant">
+            <img src="img/sushi2H.jpg" class="d-block w-100 h-50 img-carrousel photoD" alt="sushi alléchant">
         </div>
 
     </div>

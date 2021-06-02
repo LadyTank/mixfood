@@ -35,7 +35,9 @@ require_once 'inc/haut.php';
     ?>
 
     <!-- button to ad admin  -->
-    <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class=" p-2 btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter une catégorie</a>
+    <div class="col">
+        <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class=" p-2 btn btn-success my-2"><i class="fas fa-folder-plus"></i> Ajouter une catégorie</a>
+    </div>
 
     <table class="table table-striped mx-auto table-success">
         <thead class="table-success">
@@ -85,7 +87,7 @@ require_once 'inc/haut.php';
                     if ($nom_image != '') {
                     ?>
                         <!-- mettre l'image en php et reduire ce passage html -->
-                        <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $nom_image; ?>" class="img-fluid">
+                        <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $nom_image; ?>" class="img-fluid w-50">
                 </td>
             <?php
                     }

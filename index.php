@@ -1,24 +1,17 @@
 <?php
 include 'inc/init.php';
-$sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie  WHERE disponible='oui' AND en_vedette ='oui' ");
 
+// Affichage 
+$sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie  WHERE disponible='oui' AND en_vedette ='oui' ");
 $sql->execute();
-// fetch all, récuperer toutes les entrées de données par default PDO::FETCH_BOTH est utilisé
-$result =   $sql->fetchAll();
-// count le nombre de catégorie présent dans la bdd
-$nbr_categorie =  $sql->rowCount();
-//var_dump($nbr_categorie);
+$result = $sql->fetchAll();
+$nbr_categorie = $sql->rowCount();
 
 //////////  AFFICHAGE DES PLATS / SUSHI ET PIZZA  ////////////////
-// Query to get all Categories from database
 $sql2 =  $pdoSITE->prepare("SELECT * FROM produit WHERE produit_vedette='oui' AND produit_disponible ='oui'");
-//execute the sql statement as an object NOT an array
 $sql2->execute();
-// fetch all rows into array, by default PDO::FETCH_BOTH is used
-$result2 =   $sql2->fetchAll();
-//var_dump($result);
-// count the number of admin in the database
-$nbr_food =      $sql2->rowCount();
+$result2 = $sql2->fetchAll();
+$nbr_food = $sql2->rowCount();
 
 
 include 'inc/haut.php';
@@ -50,7 +43,7 @@ include 'inc/diaporama.php';
             } else {
                 // on affiche la photo si le nom de l'image existe dans la bdd
                 echo '<a href="' . SITEURL . $nom_categorie . '.php ">';
-                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="40%" height="40%" style="background-color:#28a745; border-color:#28a745;"></div>';
                 echo '</a>';
             }
         }
@@ -83,16 +76,30 @@ include 'inc/diaporama.php';
 
 </div><!-- /fin container-->
 
-<div class="container mx-auto circleC d-none d-lg-block d-md-block">
+<div class="container mx-auto d-none d-lg-block d-md-block" style="min-height:500px">
 
-    <div class=""><img src="img/chefC.jpg" alt="" class="alignRight img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
+    <div class=""><img src="img/chefC.jpg" alt="" class="img-fluid float-end img-curvy img-thumbnail circle m-4 bg-success border-success"></div>
+
 
     <h1 class="titreChoix p-4 text-left espace">À propos de nous ...</h1>
-    <p class="typoChoix text-justify p-4 m-4 espace">Bonjour je m'apelle Massimo zanoti, originaire de Naples en Italie.
-        Tous nos produits sont frais.
-        Après un voyage au Japon de 3 ans, je me suis dirigé de nouveau en France pour faire vivre cette nouvelle passion culinaire, et faire partager le savoir avec d'autres chef en France.
+    <p class="typoChoix text-justify p-4 m-4 espace">
+        <?php
+
+        $requete = $pdoSITE->query("SELECT * FROM change_accueil WHERE id_change = 1");
+
+        $nbr_commentaire = $requete->rowCount();
+
+        while ($ligne = $requete->fetch(PDO::FETCH_ASSOC)) {
+            if ($ligne['message'] != '') {
+
+                echo  $ligne['message'];
+            }
+        }
+
+        ?>
     </p>
 
+    <div class="clear"></div>
 </div>
 
 <?php

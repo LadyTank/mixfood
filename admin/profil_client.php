@@ -34,10 +34,27 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
     header('location:../index.php');
 }
 
+
+// gestion changement message d'accueil
+if (!empty($_POST['messageA'])) {
+
+    $_POST['messageA'] = htmlspecialchars($_POST['messageA']);
+
+    $message2 = $pdoSITE->prepare(" UPDATE change_accueil  SET message = :messageA WHERE id_change = 1");
+
+    $message2->execute(array(
+        ':messageA' => $_POST['messageA'],
+    ));
+
+    if ($message2) {
+        $contenu .= '<div class="alert alert-warning col-4 text-center mx-auto mb-4">Votre message d\'accueil est modifié</div>';
+    } else {
+        $contenu .= '<div class="alert alert-warning col-4 text-center mx-auto mb-4">Erreur lors de la modification !</div>';
+    }
+}
+
 // Gestion de la modification de profil
-if (!empty($_POST)) { // Si des données sont en POST
-    // jevardump($_POST);
-    // GESTION DES DONNEES POST ENVOYEES
+if (!empty($_POST['email'])) {  // Si des données sont en POST
 
     if (!isset($_POST['email']) || strlen($_POST['email']) > 50 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
@@ -223,24 +240,39 @@ include 'inc/haut.php';
         ?>
 
             <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
-                <div class="col-md-6 mt-5">
-                    <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php">
-                        Utilisateur
-                    </a>
-                </div>
                 <div class=" col-md-6 mt-5">
                     <a type="button" class="btn btn-success btn-profil" type="button" id="buttonC" href="gestion_categorie.php">
                         Catégorie
                     </a>
                 </div>
-                <h2 class="text-center text-white mb-4 espace"> Actions </h2>
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mt-5">
                     <a class="btn btn-success btn-profil" type="button" id="boutonP" href="gestion_produit.php">
                         Produit
                     </a>
                 </div>
+                <h2 class="text-center text-white mb-4 espace"> Actions </h2>
+                <div class="col-md-6 mb-5">
+                    <a type="button" class="btn btn-success  btn-profil" type="button" id="boutonU" href="gestion_utilisateur.php">
+                        Utilisateur
+                    </a>
+                </div>
                 <div class="col-md-6 mb-5">
                     <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Commande</a>
+                </div>
+                <div class="col-md-6 mb-5 ">
+
+                    <?php
+
+                    ?>
+
+                    <a href="#" class="btn btn-success btn-profil" tabindex="-1" role="button" aria-disabled="true">Message</a>
+
+                    <form class="form" method="POST">
+                        <label for="message">Entrer votre nouveau message d'accueil</label>
+
+                        <textarea name="messageA" id="messageA" cols="30" rows="10"></textarea>
+                        <button class="btn btn-success">Poster</button>
+                    </form>
                 </div>
             </div>
         <?php

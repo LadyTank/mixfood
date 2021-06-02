@@ -31,8 +31,9 @@ p, h1 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.733);
   background-image: url(../img/logoBlanc_transparant.png);
+  background-size: 150px;
   background-repeat: repeat-y;
   background-attachment: fixed;
 }
@@ -120,7 +121,7 @@ a.liVert:active {
 }
 
 footer {
-  min-height: 230px;
+  min-height: 130px;
   margin-bottom: 0 !important;
 }
 
@@ -245,5 +246,9 @@ footer .icon-fb {
 
 #coin {
   border-radius: 20px;
+}
+
+.photoD {
+  background-color: rgba(251, 251, 251, 0.2);
 }
 /*# sourceMappingURL=style.css.map */

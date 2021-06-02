@@ -54,9 +54,9 @@ $nbr_food =  $sql->rowCount();
                 // on affiche l'image / photo correspendante
                 // cette image est située dans img/produit
                 // 
-                echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" style="background-color:#28a745; border-color:#28a745;">';
+                echo '<img src="' . SITEURL . 'img/produit/' . $produit_image . '" class="img-curvy img-thumbnail img-responsive" width="55%" height="55%" style="background-color:#28a745; border-color:#28a745;">';
                 // en bas nous avont le code html de l'accordion plus le bouton
-                echo  '<h5 class="float-text text-white">' . $nom_produit . '</h5>';
+                echo  '<h5 class="float-text text-white m-3">' . $nom_produit . '</h5>';
                 echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionS' . $id_produit . '" style="width:50%">';
                 echo '<div class="accordion-item bg-success">';
                 echo '<h2 class="accordion-header" id="flush-head-accordionS' . $id_produit . '">';

@@ -14,12 +14,13 @@ define('MIXFOOD', 'mixfood');
 $pdoSITE  = new PDO("mysql:host=LOCALHOST; dbname=MIXFOOD", DB_USERNAME, DB_PASSWORD);
 $pdoSITE->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// ///////// INCLUSION DES FONCTIONS ///////// //
-require_once 'functions.php';
 
 // ///////// OUVERTURE DE SESSION ///////// //
 session_start();
 
-// /////////VARIABLE POUR LES CONTENUS ///////// //
+// ///////// 4 - VARIABLE POUR LES CONTENUS ///////// //
 $message = ''; // déclaration d'une variable pour introduire une variable vide
 $contenu = '';
+
+// ///////// 5 - INCLUSION DES FONCTIONS ///////// //
+require_once 'functions.php';
