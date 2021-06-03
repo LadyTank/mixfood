@@ -46,7 +46,7 @@ if (!empty($_POST)) { // Si des données sont en POST
             array(':email' => $_POST['email'])
         );
 
-        if ($membre->rowCount() > 0) { // si la requête retourne des lignes c'est que le pseudo existe déjà
+        if ($membre->rowCount() > 0) {
             $contenu .= '<div class="alert alert-danger">Cet email n\'est pas disponible</div>';
         } else { // si on inscrit le membre en BDD
             $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // hachage du mdp
@@ -68,6 +68,7 @@ if (!empty($_POST)) { // Si des données sont en POST
 
             if ($succes) {
                 $contenu .= '<div class="alert alert-success">Vous êtes inscrit <a href="connexion_client2.php">Cliquez ici pour vous connecter</a></div>';
+                header('location:connexion_client2.php');
             } else {
                 $contenu .= '<div class="alert alert-danger">Erreur lors de l`\enregistrement !</div>';
             } //fin du if $success
