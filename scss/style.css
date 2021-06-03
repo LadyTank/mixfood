@@ -38,6 +38,10 @@ body {
   background-attachment: fixed;
 }
 
+.tailleC {
+  height: 650px;
+}
+
 .navbar-custom {
   height: 100px;
 }
