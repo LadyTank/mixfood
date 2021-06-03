@@ -50,7 +50,7 @@ $nbr_food =  $sql->rowCount();
                     echo '<div class="accordion accordion-flush my-2 mx-auto" id="accordionS' . $id_produit . '" style="width:50%">';
                     echo '<div class="accordion-item bg-success">';
                     echo '<h2 class="accordion-header" id="flush-head-accordionS' . $id_produit . '">';
-                    echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionS' . $id_produit . '" aria-expanded="false" aria-controls="flush-accordionS' . $id_produit . '" style="background-color: #0a5846ab; color: #fff">' . $nom_produit . ' ' . $produit_prix . ' €' .
+                    echo ' <button class="accordion-button collapsed btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-accordionS' . $id_produit . '" aria-expanded="false" aria-controls="flush-accordionS' . $id_produit . '" style="background-color: #0a5846ab; color: #fff">Au panier ' . $produit_prix . ' €' .
                         '</button>';
                     echo ' </h2>';
 

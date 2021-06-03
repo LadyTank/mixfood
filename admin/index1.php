@@ -2,10 +2,9 @@
 require_once 'inc/init.php';
 include_once 'inc/functions.php';
 
-
 // sécurite pour le coté admin
 // si l'utilisateur est admin il peut acceder avoir acces a cette page
-// Seul les developpeurs peuvent acceder aux fichiers cache derriere ce meur
+// Seul les developpeurs peuvent acceder aux fichiers cache derriere ce mur
 // if (estAdmin()) {
 //     // redirigé vers mixfood/admin
 
